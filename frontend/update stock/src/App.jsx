@@ -32,7 +32,7 @@ function App() {
   const handleSelect = (item) => {
     setSelected(item);
     setSuggestions([]);
-    setSearch(item.part);
+    setSearch(`${item.part} - ${item.item}`);
   };
 
   const handleUpdate = async () => {
