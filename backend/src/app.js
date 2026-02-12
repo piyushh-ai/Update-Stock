@@ -1,5 +1,5 @@
+require("dotenv").config()
 const express = require("express");
-const stockRouter = require("./bosch_stock/routes/stock.route");
 const cors = require("cors");
 
 
@@ -11,6 +11,5 @@ app.use(cors({
   credentials: true
 }));
 
-app.use("/api/stock", stockRouter);
 
 module.exports = app;
