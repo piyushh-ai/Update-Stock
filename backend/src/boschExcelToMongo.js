@@ -1,28 +1,48 @@
 const XLSX = require("xlsx");
 const path = require("path");
-const rmpCatModel = require("./models/rmpCat.model")
+const boschStockModel = require("./models/boschStock.model");
 
-const filePath = path.join(__dirname, "../public/RMP_CAT.xlsx");
+const filePath = path.join(__dirname, "../public/BOSCH_STOCK1.xlsx");
 
 async function boschImportExcel() {
   const workbook = XLSX.readFile(filePath);
+
   for (let sheetName of workbook.SheetNames) {
     const sheetData = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
 
-
     const formattedData = sheetData.map((item) => ({
-      sno: item["S.No."],
-      partNo: item["PartNo."],
-      itemDescription: item["Item"],
-      application:item["Application"],
-      moq: item["MOQ"]
-      
+      sno: item["S.NO."],
+      itemName: item.ITEMS,
+      partno: item["PART NO."],
+      description: item.DESCRIPTION,
+      quantity: (() => {
+        const value = item.QTY;
+        if (!value) return 0;
+        const cleaned = String(value).replace(/[^0-9.-]/g, "");
+        return cleaned && !isNaN(cleaned) ? Number(cleaned) : 0;
+      })(),
+      mrp: (() => {
+        const value = item.MRP;
+        if (!value) return null;
+        const cleaned = String(value).replace(/[^0-9.]/g, "");
+        return cleaned && !isNaN(cleaned) ? Number(cleaned) : null;
+      })(),
+      sheetName: sheetName,
     }));
-    await rmpCatModel.insertMany(formattedData)
-    
-    
+
+    const bulkOps = formattedData.map((item) => ({
+      updateOne: {
+        filter: { partno: item.partno },
+        update: { $set: item },
+        upsert: true,
+      },
+    }));
+
+    await boschStockModel.bulkWrite(bulkOps)
   }
-  
+
+  console.log("Excel Sync Completed ✅");
 }
+
 
 module.exports = boschImportExcel;
