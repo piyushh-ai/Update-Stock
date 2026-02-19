@@ -1,6 +1,8 @@
 const app = require("./src/app");
 const boschImportExcel = require("./src/boschExcelToMongo");
 const connectToDb = require("./src/config/db");
+const boschAlternatorCat = require("./src/excelToMongo/boschAlternatorCat");
+const boschStarterCat = require("./src/excelToMongo/boschStarterCat");
 
 connectToDb();
 boschImportExcel()
