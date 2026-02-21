@@ -4,6 +4,7 @@ const companyImportExcel = require("./src/companyExcelTOMongo");
 const connectToDb = require("./src/config/db");
 const boschAlternatorCat = require("./src/excelToMongo/boschAlternatorCat");
 const boschStarterCat = require("./src/excelToMongo/boschStarterCat");
+const parsePDF = require("./src/pdfToJson");
 
 const port = 5000;
 
