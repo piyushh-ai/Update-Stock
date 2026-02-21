@@ -1,10 +1,10 @@
 const XLSX = require("xlsx");
 const path = require("path");
-const boschStockModel = require("./models/boschStock.model");
+const companyStockModel = require("./models/companyStock.model");
 
-const filePath = path.join(__dirname, "../public/BOSCH_STOCK1.xlsx");
+const filePath = path.join(__dirname, "../public/LUCAS_STOCK.xlsx");
 
-async function boschImportExcel() {
+async function companyImportExcel() {
   const workbook = XLSX.readFile(filePath);
 
   for (let sheetName of workbook.SheetNames) {
@@ -38,11 +38,11 @@ async function boschImportExcel() {
       },
     }));
 
-    await boschStockModel.bulkWrite(bulkOps)
+    await companyStockModel.bulkWrite(bulkOps)
   }
 
-  console.log("Bosch Excel Sync Completed ✅");
+  console.log("Company Excel Sync Completed ✅");
 }
 
 
-module.exports = boschImportExcel;
+module.exports = companyImportExcel;
