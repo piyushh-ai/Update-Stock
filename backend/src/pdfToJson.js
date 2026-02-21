@@ -2,92 +2,122 @@ const fs = require("fs");
 const pdf = require("pdf-parse");
 const path = require("path");
 
-
-const filePath = path.join(__dirname, "../public/PC_Filters_compressed.pdf");
+const filePath = path.join(__dirname, "../public/Filter-Catalogue-Autolek.pdf");
 const pdfPath = filePath;
 
 async function parsePDF() {
-  const dataBuffer = fs.readFileSync(pdfPath);
-  const data = await pdf(dataBuffer);
+  const buffer = fs.readFileSync(pdfPath);
+  const data = await pdf(buffer);
 
   const lines = data.text
     .split("\n")
-    .map(l => l.trim())
-    .filter(l => l.length > 0);
+    .map((l) => l.trim())
+    .filter(Boolean);
 
   const results = [];
   let currentBrand = null;
 
-  for (let i = 0; i < lines.length; i++) {
+  const brandList = [
+    "Maruti Suzuki",
+    "Mahindra",
+    "Hyundai",
+    "TATA",
+    "Chevrolet",
+    "Toyota",
+    "Honda",
+    "Renault/Nissan/Skoda",
+    "Ford",
+    "Volkswagen",
+    "Ashok Leyland",
+  ];
 
-    // Detect Brand
-    const brandMatch = lines[i].match(/^Suitable for (.+)$/);
-    if (brandMatch) {
-      currentBrand = brandMatch[1].trim();
+  for (let i = 0; i < lines.length; i++) {
+    // 🔹 Detect Brand
+    if (lines[i].toLowerCase().includes("suitable for")) {
+      for (const brand of brandList) {
+        if (lines[i].toLowerCase().includes(brand.toLowerCase())) {
+          currentBrand = brand;
+        }
+      }
       continue;
     }
 
-    // Detect Filter Type
-    if (
-      lines[i] === "Air Filter" ||
-      lines[i] === "Oil Filter" ||
-      lines[i] === "Fuel Filter" ||
-      lines[i] === "Cabin Filter"
-    ) {
+    // 🔹 Detect Part Number
+    const partMatch = lines[i].match(/AIL Part No\.:\s*(.+)/);
+    if (partMatch) {
+      const partNumber = partMatch[1].trim();
 
-      const filterType = lines[i];
+      let description = "";
+      let application = "";
+      let mrp = null;
+      let stdPacking = null;
 
-      const boschPartNumber = lines[i + 1] || "";
+      let j = i + 1;
 
-      let oePartNumber = [];
-      let compatibleModels = [];
+      while (j < lines.length && !lines[j].includes("AIL Part No.")) {
+        if (lines[j].startsWith("Description")) {
+          description = lines[j].replace("Description :", "").trim();
+        } else if (
+          !description &&
+          !lines[j].startsWith("Application") &&
+          !lines[j].includes("MRP") &&
+          !lines[j].includes("STD PACKING")
+        ) {
+          description += " " + lines[j];
+        }
 
-      // Find OE PN
-      const oeMatch = lines[i + 2]?.match(/OE PN\s*:\s*(.+)/);
-      if (oeMatch) {
-        oePartNumber = oeMatch[1]
-          .split(",")
-          .map(p => p.trim());
-      }
+        if (lines[j].startsWith("Application")) {
+          application = lines[j].replace("Application :", "").trim();
 
-      // Collect models (next line)
-      let modelLine = lines[i + 3] || "";
+          // handle multi-line application
+          let k = j + 1;
+          while (
+            k < lines.length &&
+            !lines[k].includes("MRP") &&
+            !lines[k].includes("STD PACKING") &&
+            !lines[k].includes("AIL Part No.")
+          ) {
+            application += " " + lines[k];
+            k++;
+          }
+        }
 
-      // Sometimes models span multiple lines
-      let j = i + 4;
-      while (
-        j < lines.length &&
-        !lines[j].includes("Filter") &&
-        !lines[j].startsWith("Suitable for") &&
-        !lines[j].includes("OE PN")
-      ) {
-        modelLine += " " + lines[j];
+        if (lines[j].includes("MRP")) {
+          const mrpMatch = lines[j].match(/Rs\.\s*(\d+)/);
+          if (mrpMatch) mrp = Number(mrpMatch[1]);
+        }
+
+        if (lines[j].includes("STD PACKING")) {
+          const packMatch = lines[j].match(/STD PACKING\s*:\s*(\d+)/);
+          if (packMatch) stdPacking = Number(packMatch[1]);
+        }
+
+        if (mrp && stdPacking) break;
+
         j++;
       }
 
-      compatibleModels = modelLine
-        .split(",")
-        .map(m => m.trim())
-        .filter(Boolean);
-
       results.push({
         brand: currentBrand,
-        filterType,
-        boschPartNumber,
-        oePartNumber,
-        compatibleModels
+        partNumber,
+        filterType: description.split("(")[0].trim(),
+        description: description.trim(),
+        application: application
+          .split(",")
+          .map((a) => a.trim())
+          .filter(Boolean),
+        mrp,
+        stdPacking,
       });
 
-      i = j - 1;
+      i = j;
     }
   }
 
-  fs.writeFileSync(
-    "bosch_filters.json",
-    JSON.stringify(results, null, 2)
-  );
+  fs.writeFileSync("final_catalogue.json", JSON.stringify(results, null, 2));
 
-  console.log("✅ JSON file created successfully");
+  console.log("✅ Catalogue Converted Successfully");
+  console.log("Total Products:", results.length);
 }
 
 module.exports = parsePDF;
