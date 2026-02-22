@@ -1,18 +1,23 @@
 const mongoose = require("mongoose");
 
-const dns = require("dns");
-dns.setServers(["8.8.8.8", "8.8.4.4"]);
-dns.setDefaultResultOrder("ipv4first");
+let cached = global.mongoose;
 
-function connectToDb() {
-  mongoose
-    .connect(process.env.MONGO_URI)
-    .then(() => {
-      console.log("connected to db");
-    })
-    .catch((err) => {
-      console.log(err.message);
-    });
+if (!cached) {
+  cached = global.mongoose = { conn: null, promise: null };
+}
+
+
+async function connectToDb() {
+   if (cached.conn) return cached.conn;
+
+  if (!cached.promise) {
+    cached.promise = mongoose.connect(process.env.MONGO_URI, {
+      bufferCommands: false,
+    }).then((mongoose) => mongoose);
+  }
+
+  cached.conn = await cached.promise;
+  return cached.conn;
 }
 
 module.exports = connectToDb;
