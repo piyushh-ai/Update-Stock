@@ -56,7 +56,7 @@ async function boschStockController(req, res) {
     const total = await boschStockModel.countDocuments(searchQuery);
 
     if (boschStock.length === 0 && total === 0) {
-      return res.status(404).json({
+      return res.status(204).json({
         message: "No Bosch Stock items found",
       });
     }

@@ -57,7 +57,7 @@ async function getAllBoschFilters(req, res) {
     const total = await BoschFilterModel.countDocuments(searchQuery);
 
     if (boschFilters.length === 0 && total === 0) {
-      return res.status(404).json({
+      return res.status(204).json({
         message: "No Bosch filters found",
       });
     }

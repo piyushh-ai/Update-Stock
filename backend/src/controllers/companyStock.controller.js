@@ -8,7 +8,7 @@ async function getAllCompanyStockController(req, res) {
     const fullStock = await companyStockModel.find().lean();
 
     if (fullStock.length === 0) {
-      return res.status(404).json({ message: "No company stock data found" });
+      return res.status(204).json({ message: "No company stock data found" });
     }
 
     res.status(200).json({ data: fullStock });
@@ -25,7 +25,7 @@ async function getCompanyStockSheetsController(req, res) {
     const sheets = await companyStockModel.distinct("sheetName");
 
     if (sheets.length === 0) {
-      return res.status(404).json({ message: "No sheet data found" });
+      return res.status(204).json({ message: "No sheet data found" });
     }
 
     // Search
@@ -71,7 +71,7 @@ async function getCompanyStockSheetsController(req, res) {
 
     if (sheetData.length === 0) {
       return res
-        .status(404)
+        .status(204)
         .json({ message: "No stock data found for search query" });
     }
 
@@ -140,7 +140,7 @@ async function getCompanyStockBySheetNameController(req, res) {
 
     if (stockBySheet.length === 0) {
       return res
-        .status(404)
+        .status(204)
         .json({ message: `No stock data found for sheet: ${sheetName}` });
     }
 

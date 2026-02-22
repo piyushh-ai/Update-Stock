@@ -16,11 +16,10 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: true,
     credentials: true,
-  })
+  }),
 );
-
 
 app.get("/test", (req, res) => {
   res.json({ working: true });
@@ -31,8 +30,8 @@ app.get("/test", (req, res) => {
  */
 app.use("/api/rmpCat", rmpCatRouter);
 app.use("/api/bosch-electric-cat", boschAECatRouter);
-app.use("/api/bosch-filters", boschFilterRoute)
-app.use("/api/autolek-filters", autolekFilterRoute)
+app.use("/api/bosch-filters", boschFilterRoute);
+app.use("/api/autolek-filters", autolekFilterRoute);
 
 /**
  * all stock routes are defined here

@@ -59,7 +59,7 @@ async function getautolekFilter(req, res) {
     const total = await autolekFilterModel.countDocuments(searchQuery);
 
     if (autolekFilter.length === 0 && total === 0) {
-      return res.status(404).json({
+      return res.status(204).json({
         message: "No Autolek filters found",
       });
     }

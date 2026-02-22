@@ -29,15 +29,17 @@ const Home = () => {
                 </div>
               </div>
             </Link>
-            <div className="box">
-              <div className="company-name">
-                <h3>Other Companies</h3>
-                <p>Lucas, NBC, RMP, Autolek, Delphi, Goodyear, Ascot...</p>
+            <Link to={"/company"}>
+              <div className="box">
+                <div className="company-name">
+                  <h3>Other Companies</h3>
+                  <p>Lucas, NBC, RMP, Autolek, Delphi, Goodyear, Ascot...</p>
+                </div>
+                <div className="arrow">
+                  <ArrowRight />
+                </div>
               </div>
-              <div className="arrow">
-                <ArrowRight />
-              </div>
-            </div>
+            </Link>
           </div>
         </div>
         <ImageMarque />

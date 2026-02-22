@@ -1,6 +1,6 @@
 @font-face {
   font-family: hannah;
-  src: url(/font/Hannah\ Claira\ DEMO\ VERSION.otf);
+  src: url(/font/Recoleta-RegularDEMO.otf);
 }
 
 * {
@@ -14,15 +14,10 @@ body,
 #root {
   height: 100%;
   width: 100%;
-  font-family: hannah;
+  font-family: hannah, Arial, sans-serif;
 
   /* ── Page background: cool blue-grey, easy on the eyes all day ── */
-  background: linear-gradient(
-    160deg,
-    var(--bg-page)   0%,
-    var(--bg-soft)  55%,
-    #c4cfdf         100%
-  );
+  background-color: #eef1f6;
 }
 
 /* ════════════════════════════════════════════════════════════════

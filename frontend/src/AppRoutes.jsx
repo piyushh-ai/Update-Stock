@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router";
 import Home from "./home/pages/Home";
 import Menuhook from "./components/common/header+menu/hooks/Menuhook";
 import FullBoschStock from "./boschStock/pages/FullBoschStock";
+import CompanySheetsPage from "./lucasStock/pages/CompanySheetsPage";
+import CompanyStockBySheetPage from "./lucasStock/pages/CompanyStockBySheetPage";
 
 export const router = createBrowserRouter([
  {
@@ -15,6 +17,14 @@ export const router = createBrowserRouter([
       {
         path: "/bosch-stock",
         element: <FullBoschStock />,
+      },
+      {
+        path: "/company",
+        element: <CompanySheetsPage />,
+      },
+      {
+        path: "/company/:sheetName",
+        element: <CompanyStockBySheetPage />,
       },
     ],
   },

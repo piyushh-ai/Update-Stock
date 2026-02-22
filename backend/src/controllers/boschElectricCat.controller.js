@@ -61,7 +61,7 @@ async function boschStarterCatController(req, res) {
     const total = await boschStarterCatModel.countDocuments(searchQuery);
 
     if (starterData.length === 0) {
-      return res.status(404).json({ message: "No starter motor data found" });
+      return res.status(204).json({ message: "No starter motor data found" });
     }
 
     res.status(200).json({

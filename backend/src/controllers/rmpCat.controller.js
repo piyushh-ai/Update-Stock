@@ -55,7 +55,7 @@ async function rmpCatController(req, res) {
     const total = await rmpCatModel.countDocuments(searchQuery);
 
     if (rmpCat.length === 0 && total === 0) {
-      return res.status(404).json({
+      return res.status(204).json({
         message: "No RMP Catalogue items found",
       });
     }

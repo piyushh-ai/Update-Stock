@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
-import "../styles/fullBoschStock.scss";
-import { useBoschStock } from "../hooks/useBoschStock";
-import { useBoschStockStore } from "../state/boschStock.store";
-import { useDebounce } from "../hooks/useDebounce";
+import "../styles/CompanyStockBySheetPage.scss";
+import { useStockBySheet } from "../hooks/useCompanyStock";
+import { useDebounce } from "../../boschStock/hooks/useDebounce";
+import { useParams } from "react-router";
 
 /* ─── Helpers ─────────────────────────────────────────────────── */
 const formatDate = (iso) => {
@@ -204,26 +204,25 @@ const TableRow = ({ item, query, index }) => (
 /* ─── Main Component ──────────────────────────────────────────── */
 const FullBoschStock = () => {
   const [page, setPage] = useState(1);
-  const [search, setSearch] = useState("");
   const [focused, setFocused] = useState(false);
   const inputRef = useRef(null);
+  const { sheetName } = useParams();
+  const [search, setSearch] = useState("");
 
   const debouncedSearch = useDebounce(search, 400);
 
-  const { loading, error } = useBoschStock({
-    page,
-    limit: 20,
-    search: debouncedSearch,
-  });
-  const { boschStock } = useBoschStockStore();
+//   const { loading, error } = useStockBySheet({
+//     sheetName, search
+//   });
+  const {  stock, total, loading, error } = useStockBySheet(sheetName, debouncedSearch);
 
-  console.log(boschStock);
+  console.log(stock);
 
   useEffect(() => {
     setPage(1);
   }, [debouncedSearch]);
 
-  const hasData = Array.isArray(boschStock) && boschStock.length > 0;
+  const hasData = Array.isArray(stock) && stock.length > 0;
   const isEmpty = !loading && !error && !hasData;
 
   return (
@@ -272,9 +271,9 @@ const FullBoschStock = () => {
             />
           </svg>
           <div>
-            <h2 className="page-title">Bosch Stock</h2>
+            <h2 className="page-title">{sheetName}</h2>
             <p className="page-subtitle">
-              Live inventory · {hasData ? boschStock.length : 0} items shown
+              Live inventory · {hasData ? stock.length : 0} items shown
             </p>
           </div>
         </div>
@@ -369,7 +368,7 @@ const FullBoschStock = () => {
             {loading
               ? [...Array(8)].map((_, i) => <SkeletonRow key={i} />)
               : hasData
-                ? boschStock.map((item, i) => (
+                ? stock.map((item, i) => (
                     <TableRow
                       key={item._id}
                       item={item}
@@ -388,7 +387,7 @@ const FullBoschStock = () => {
         {loading ? (
           [...Array(6)].map((_, i) => <SkeletonCard key={i} />)
         ) : hasData ? (
-          boschStock.map((item, i) => (
+          stock.map((item, i) => (
             <StockCard
               key={item._id}
               item={item}
@@ -424,7 +423,7 @@ const FullBoschStock = () => {
           <button
             className="page-btn"
             onClick={() => setPage((p) => p + 1)}
-            disabled={boschStock.length < 20}
+            disabled={stock.length < 20}
           >
             Next
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none">

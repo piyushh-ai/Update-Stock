@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "https://update-stock.vercel.app/",
+  baseURL: "https://bkstockserver.onrender.com/api",
   timeout: 10000,
 });
 
