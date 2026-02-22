@@ -1,0 +1,130 @@
+@font-face {
+  font-family: hannah;
+  src: url(/font/Hannah\ Claira\ DEMO\ VERSION.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  font-family: hannah;
+
+  /* ── Page background: cool blue-grey, easy on the eyes all day ── */
+  background: linear-gradient(
+    160deg,
+    var(--bg-page)   0%,
+    var(--bg-soft)  55%,
+    #c4cfdf         100%
+  );
+}
+
+/* ════════════════════════════════════════════════════════════════
+   ENTERPRISE COLOR SYSTEM — B.K Engineering Inventory Management
+   ════════════════════════════════════════════════════════════════
+
+   Design rationale
+   ─────────────────
+   • Primary brand: deep navy-blue (#1a3557) — conveys reliability,
+     trust, and financial stability without feeling aggressive.
+   • Accent: medium slate-blue (#3b6ea5) — a confident, calm action
+     color for buttons, links, and interactive highlights.
+   • Backgrounds: layered blue-greys (#eef1f6 → #dde3ed) so the
+     layout breathes without feeling cold or clinical.
+   • Surfaces: pure white (#ffffff) and near-white (#f7f9fc) keep
+     cards crisp and scannable under bright office lighting.
+   • Text: near-black charcoal (#111827) at primary, medium slate
+     (#4b5d6e) for secondary — both pass WCAG AA on all surfaces.
+   • Danger / success tones are intentionally muted so they signal
+     without alarming; the palette stays coherent under stress.
+   ════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Brand ── */
+  --color-primary:          #1a3557;   /* deep navy — headings, key UI */
+  --color-primary-hover:    #142a45;   /* darkened for hover states     */
+  --color-primary-light:    #2d5282;   /* slightly lighter, still bold  */
+  --color-accent:           #3b6ea5;   /* slate-blue — CTAs, links      */
+  --color-accent-hover:     #2f5a8a;   /* accent on press / hover       */
+  --color-accent-subtle:    #dbeafe;   /* tint for badges, highlights   */
+
+  /* ── Page Backgrounds ── */
+  --bg-page:                #eef1f6;   /* main layout wash              */
+  --bg-soft:                #dde3ed;   /* sidebar, subtle section tints */
+  --bg-muted:               #ccd4e0;   /* dividers, skeleton loaders    */
+
+  /* ── Surface / Cards ── */
+  --surface-primary:        #ffffff;   /* main cards                    */
+  --surface-secondary:      #f7f9fc;   /* inner panels, table rows alt  */
+  --surface-overlay:        rgba(255, 255, 255, 0.88); /* glass effect  */
+  --surface-dark:           #1a3557;   /* inverted panels               */
+
+  /* ── Text ── */
+  --text-primary:           #111827;   /* body copy, headings           */
+  --text-secondary:         #4b5d6e;   /* labels, captions              */
+  --text-muted:             #8898aa;   /* placeholders, helper text     */
+  --text-on-dark:           #ffffff;   /* text on dark/primary surfaces */
+  --text-on-accent:         #ffffff;   /* text on accent buttons        */
+  --text-link:              #3b6ea5;   /* hyperlinks                    */
+
+  /* ── Status — muted, never garish ── */
+  --status-success:         #2e7d54;   /* confirmed stock, active       */
+  --status-success-bg:      #ecfdf3;
+  --status-warning:         #92600a;   /* low stock, pending            */
+  --status-warning-bg:      #fefce8;
+  --status-danger:          #9b2335;   /* out of stock, errors          */
+  --status-danger-bg:       #fff1f2;
+  --status-info:            #1e5799;   /* informational notices         */
+  --status-info-bg:         #eff6ff;
+
+  /* ── Borders ── */
+  --border-light:           #e2e8f0;   /* card outlines, row dividers   */
+  --border-medium:          #c8d3e0;   /* input fields, modal frames    */
+  --border-focus:           #3b6ea5;   /* focused inputs                */
+
+  /* ── Shadows ── */
+  --shadow-xs:    0 1px 3px rgba(26, 53, 87, 0.06);
+  --shadow-soft:  0 4px 20px rgba(26, 53, 87, 0.08);
+  --shadow-card:  0 8px 32px rgba(26, 53, 87, 0.10);
+  --shadow-modal: 0 20px 60px rgba(26, 53, 87, 0.16);
+
+  /* ── Radius ── */
+  --radius-sm:  10px;
+  --radius-md:  16px;
+  --radius-lg:  24px;
+  --radius-xl:  32px;
+  --radius-pill: 9999px;
+
+  /* ── Transitions ── */
+  --transition-fast:   all 0.15s ease;
+  --transition-smooth: all 0.25s ease;
+  --transition-slow:   all 0.4s ease;
+
+  /* ── Spacing scale (8-pt grid) ── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* ── Legacy aliases (keeps existing components working) ── */
+  --color-primary-dark:     var(--color-primary-hover);
+  --bg-light:               var(--bg-page);
+  --bg-dark:                var(--surface-dark);
+  --card-light:             var(--surface-overlay);
+  --card-dark:              #0f1e30;
+  --text-dark:              var(--text-primary);
+  --text-light:             var(--text-on-dark);
+  --border-light-legacy:    var(--border-light);
+  --shadow-strong:          var(--shadow-modal);
+}

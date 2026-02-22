@@ -1,0 +1,44 @@
+.header {
+  position: absolute;
+  z-index: 30;
+  width: 100%;
+  padding: 1rem 1rem 0;
+  margin-top: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: transparent;
+
+  &__btn {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  &__icon {
+    font-size: 16px;
+    color: #475569;
+  }
+
+  &__placeholder {
+    width: 40px;
+    height: 40px;
+  }
+}

@@ -9,6 +9,8 @@ const rmpCatRouter = require("./routes/rmpCat.route");
 const boschStockRouter = require("./routes/boschStock.route");
 const boschAECatRouter = require("./routes/boschAECat.route.js");
 const companyStockRouter = require("./routes/companyStock.routes.js");
+const boschFilterRoute = require("./routes/boschFilter.route.js");
+const autolekFilterRoute = require("./routes/autolekFilter.route.js");
 
 const app = express();
 app.use(express.json());
@@ -24,6 +26,8 @@ app.use(
  */
 app.use("/api/rmpCat", rmpCatRouter);
 app.use("/api/bosch-electric-cat", boschAECatRouter);
+app.use("/api/bosch-filters", boschFilterRoute)
+app.use("/api/autolek-filters", autolekFilterRoute)
 
 /**
  * all stock routes are defined here

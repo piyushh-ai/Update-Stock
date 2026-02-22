@@ -18,7 +18,6 @@ connectToDb();
  */
 boschImportExcel()
 companyImportExcel()
-parsePDF();
 
 
 app.listen(port, () => {

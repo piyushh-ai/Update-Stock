@@ -1,0 +1,57 @@
+.bosch-container {
+  padding: 30px;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  padding-top: 5rem;
+
+  .company-header {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+
+    h2 {
+      font-size: 1.5rem;
+      color: var(--text-primary);
+    }
+    p {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-top: 5px;
+      letter-spacing: 0.8px;
+    }
+
+    .input-div {
+      width: 100%;
+      border: 1px solid var(--border-medium);
+      border-radius: 30px;
+      padding: 6px 12px;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .search-icon {
+        left: 14px;
+        width: 25px;
+        height: 25px;
+        color: var(--text-muted);
+        pointer-events: none;
+        transition: var(--transition-fast);
+
+        .search-wrap--focused & {
+          color: var(--color-accent);
+        }
+      }
+
+      input {
+        width: 100%;
+        padding: 0 2px;
+        border-radius: 50px;
+        outline: none;
+        border: none;
+      }
+    }
+  }
+}
