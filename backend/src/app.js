@@ -21,6 +21,11 @@ app.use(
   })
 );
 
+
+app.get("/test", (req, res) => {
+  res.json({ working: true });
+});
+
 /**
  * all catalog routes are defined here
  */
