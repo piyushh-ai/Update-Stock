@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "https://bkstockserver.onrender.com/api",
+  baseURL: "https://update-stock-jnfp.onrender.com/api",
   timeout: 10000,
 });
 

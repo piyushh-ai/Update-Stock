@@ -119,12 +119,13 @@ const StockCard = ({ item, query, index }) => (
         {highlight(item.partno || "—", query)}
       </span>
       <span
-        className={`qty-badge ${item.qty === 0 ? "qty-zero" : item.qty < 5 ? "qty-low" : "qty-ok"}`}
+        className={`qty-badge ${item.quantity === 0 ? "qty-zero" : item.quantity < 5 ? "qty-low" : "qty-ok"}`}
       >
-        Qty: {item.qty ?? 0}
+        Qty: {item.quantity ?? 0}
       </span>
     </div>
     <div className="item-name">{item.itemName || item.description || "—"}</div>
+    <div className="item-name">{highlight(item.description || "—")}</div>
     <div className="card-meta">
       <span className="meta-chip">
         <svg width="11" height="11" viewBox="0 0 16 16" fill="none">
@@ -156,18 +157,19 @@ const StockCard = ({ item, query, index }) => (
             strokeLinecap="round"
           />
         </svg>
-        {formatDate(item.updatedAt || item.createdAt)}
+        {formatDate(item.modifiedDate || item.createdAt)}
       </span>
     </div>
     <div className="card-footer">
       <span className="mrp-label">MRP</span>
       <span className="mrp-value">
         {item.mrp != null
-          ? `₹${Number(item.mrp).toLocaleString("en-IN")}`
+          ? `₹${item.mrp
+          }`
           : "—"}
       </span>
       <span className="serial-label">S/N</span>
-      <span className="serial-value">{item.serialNo || "—"}</span>
+      <span className="serial-value">{item.sno || "—"}</span>
     </div>
   </div>
 );
@@ -181,23 +183,26 @@ const TableRow = ({ item, query, index }) => (
       </span>
     </td>
     <td className="td-name">{item.itemName || item.description || "—"}</td>
+    <td className="td-name">{highlight(item.description || "—")}</td>
     <td className="td-qty">
       <span
-        className={`qty-badge ${item.qty === 0 ? "qty-zero" : item.qty < 5 ? "qty-low" : "qty-ok"}`}
+        className={`qty-badge ${item.quantity === 0 ? "qty-zero" : item.quantity < 5 ? "qty-low" : "qty-ok"}`}
       >
-        {item.qty ?? 0}
+        {item.quantity}
       </span>
     </td>
     <td className="td-mrp">
       {item.mrp != null ? (
-        `₹${Number(item.mrp).toLocaleString("en-IN")}`
+        `₹${item.mrp}`
       ) : (
         <span className="na">—</span>
       )}
     </td>
     <td className="td-sheet">{item.sheetName || "—"}</td>
-    <td className="td-serial">{item.serialNo || "—"}</td>
-    <td className="td-date">{formatDate(item.updatedAt || item.createdAt)}</td>
+    <td className="td-serial">{item.sno || "—"}</td>
+    <td className="td-date">
+      {formatDate(item.modifiedDate || item.createdAt)}
+    </td>
   </tr>
 );
 
@@ -211,10 +216,13 @@ const FullBoschStock = () => {
 
   const debouncedSearch = useDebounce(search, 400);
 
-//   const { loading, error } = useStockBySheet({
-//     sheetName, search
-//   });
-  const {  stock, total, loading, error } = useStockBySheet(sheetName, debouncedSearch);
+  //   const { loading, error } = useStockBySheet({
+  //     sheetName, search
+  //   });
+  const { stock, total, loading, error } = useStockBySheet(
+    sheetName,
+    debouncedSearch,
+  );
 
   console.log(stock);
 
@@ -357,6 +365,7 @@ const FullBoschStock = () => {
             <tr>
               <th>Part No.</th>
               <th>Item Name</th>
+              <th>Description</th>
               <th>Qty</th>
               <th>MRP</th>
               <th>Sheet</th>
