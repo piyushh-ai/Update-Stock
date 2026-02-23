@@ -1,12 +1,16 @@
 const XLSX = require("xlsx");
 const path = require("path");
 const boschStockModel = require("./models/boschStock.model");
+const fs = require("fs")
 
 const filePath = path.join(__dirname, "../public/BOSCH_STOCK1.xlsx");
 
 async function boschImportExcel() {
   const workbook = XLSX.readFile(filePath);
-
+  const stats = fs.statSync(filePath);
+  const modifiedDate = stats.mtime;
+  
+  
   for (let sheetName of workbook.SheetNames) {
     const sheetData = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
 
@@ -28,6 +32,7 @@ async function boschImportExcel() {
         return cleaned && !isNaN(cleaned) ? Number(cleaned) : null;
       })(),
       sheetName: sheetName,
+      modifiedDate : modifiedDate
     }));
 
     const bulkOps = formattedData.map((item) => ({

@@ -1,10 +1,13 @@
 const XLSX = require("xlsx");
 const path = require("path");
 const companyStockModel = require("./models/companyStock.model");
+const fs = require("fs")
 
 const filePath = path.join(__dirname, "../public/LUCAS_STOCK.xlsx");
 
 async function companyImportExcel() {
+  const stats = fs.statSync(filePath);
+  const modifiedDate = stats.mtime;
   const workbook = XLSX.readFile(filePath);
 
   for (let sheetName of workbook.SheetNames) {
@@ -28,6 +31,7 @@ async function companyImportExcel() {
         return cleaned && !isNaN(cleaned) ? Number(cleaned) : null;
       })(),
       sheetName: sheetName,
+      modifiedDate: modifiedDate
     }));
 
     const bulkOps = formattedData.map((item) => ({

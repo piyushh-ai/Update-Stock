@@ -125,6 +125,7 @@ const StockCard = ({ item, query, index }) => (
       </span>
     </div>
     <div className="item-name">{item.itemName || item.description || "—"}</div>
+    <div className="item-name">{highlight(item.description || "—", query)}</div>
     <div className="card-meta">
       <span className="meta-chip">
         <svg width="11" height="11" viewBox="0 0 16 16" fill="none">
@@ -181,6 +182,7 @@ const TableRow = ({ item, query, index }) => (
       </span>
     </td>
     <td className="td-name">{item.itemName || item.description || "—"}</td>
+    <td className="td-name">{highlight(item.description || "—", query)}</td>
     <td className="td-qty">
       <span
         className={`qty-badge ${item.qty === 0 ? "qty-zero" : item.qty < 5 ? "qty-low" : "qty-ok"}`}
@@ -358,6 +360,7 @@ const FullBoschStock = () => {
             <tr>
               <th>Part No.</th>
               <th>Item Name</th>
+              <th>Description</th>
               <th>Qty</th>
               <th>MRP</th>
               <th>Sheet</th>

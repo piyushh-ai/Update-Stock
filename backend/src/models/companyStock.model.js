@@ -24,6 +24,9 @@ const companyStockSchema = new mongoose.Schema(
     sheetName: {
       type: String,
     },
+     modifiedDate: {
+      type: String,
+    },
   },
   { timestamps: true },
 );
