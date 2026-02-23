@@ -18,18 +18,8 @@ async function companyImportExcel() {
       itemName: item.ITEMS,
       partno: item["PART NO."],
       description: item.DESCRIPTION,
-      quantity: (() => {
-        const value = item.QTY;
-        if (!value) return 0;
-        const cleaned = String(value).replace(/[^0-9.-]/g, "");
-        return cleaned && !isNaN(cleaned) ? Number(cleaned) : 0;
-      })(),
-      mrp: (() => {
-        const value = item.MRP;
-        if (!value) return null;
-        const cleaned = String(value).replace(/[^0-9.]/g, "");
-        return cleaned && !isNaN(cleaned) ? Number(cleaned) : null;
-      })(),
+      quantity: item.QTY,
+      mrp: item.MRP,
       sheetName: sheetName,
       modifiedDate: modifiedDate
     }));

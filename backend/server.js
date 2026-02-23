@@ -1,5 +1,6 @@
 const app = require("./src/app");
 const boschImportExcel = require("./src/boschExcelToMongo");
+const boschPriceImportExcel = require("./src/boschPriceExcelToMongo");
 const companyImportExcel = require("./src/companyExcelTOMongo");
 const connectToDb = require("./src/config/db");
 const boschAlternatorCat = require("./src/excelToMongo/boschAlternatorCat");
@@ -18,6 +19,7 @@ connectToDb();
  */
 boschImportExcel()
 companyImportExcel()
+boschPriceImportExcel()
 
 
 app.listen(port, () => {
