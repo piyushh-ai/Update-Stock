@@ -5,7 +5,7 @@ const BoschpriceListModel = require("./models/boschPriceList.model");
 
 const filePath = path.join(
   __dirname,
-  "../public/Bosch_Pricelist_PC_feb_2026.xlsx",
+  "../public/Price_Report-JAN-2026.xlsx",
 );
 
 async function boschPriceImportExcel() {
