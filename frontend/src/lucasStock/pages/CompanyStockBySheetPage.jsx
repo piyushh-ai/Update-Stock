@@ -163,10 +163,7 @@ const StockCard = ({ item, query, index }) => (
     <div className="card-footer">
       <span className="mrp-label">MRP</span>
       <span className="mrp-value">
-        {item.mrp != null
-          ? `₹${item.mrp
-          }`
-          : "—"}
+        {item.mrp != null ? `₹${item.mrp}` : "—"}
       </span>
       <span className="serial-label">S/N</span>
       <span className="serial-value">{item.sno || "—"}</span>
@@ -192,11 +189,7 @@ const TableRow = ({ item, query, index }) => (
       </span>
     </td>
     <td className="td-mrp">
-      {item.mrp != null ? (
-        `₹${item.mrp}`
-      ) : (
-        <span className="na">—</span>
-      )}
+      {item.mrp != null ? `₹${item.mrp}` : <span className="na">—</span>}
     </td>
     <td className="td-sheet">{item.sheetName || "—"}</td>
     <td className="td-serial">{item.sno || "—"}</td>
@@ -214,15 +207,17 @@ const FullBoschStock = () => {
   const { sheetName } = useParams();
   const [search, setSearch] = useState("");
 
-  const debouncedSearch = useDebounce(search, 400);
+  const debouncedSearch = useDebounce(search, 100);
 
   //   const { loading, error } = useStockBySheet({
   //     sheetName, search
   //   });
-  const { stock, total, loading, error } = useStockBySheet(
+  const { stock, total, loading, error } = useStockBySheet({
     sheetName,
-    debouncedSearch,
-  );
+    page,
+    limit: 10,
+    search: debouncedSearch,
+  });
 
   console.log(stock);
 

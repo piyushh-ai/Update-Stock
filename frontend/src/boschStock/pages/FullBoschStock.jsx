@@ -212,11 +212,11 @@ const FullBoschStock = () => {
   const [focused, setFocused] = useState(false);
   const inputRef = useRef(null);
 
-  const debouncedSearch = useDebounce(search, 400);
+  const debouncedSearch = useDebounce(search, 100);
 
   const { loading, error } = useBoschStock({
     page,
-    limit: 20,
+    limit: 10,
     search: debouncedSearch,
   });
   const { boschStock } = useBoschStockStore();

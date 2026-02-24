@@ -89,6 +89,9 @@ async function getCompanyStockSheetsController(req, res) {
 async function getCompanyStockBySheetNameController(req, res) {
   try {
     const { sheetName } = req.params;
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 20;
+    const skip = (page - 1) * limit;
 
     // Search
     const rawSearch = req.query.search || "";
@@ -131,7 +134,9 @@ async function getCompanyStockBySheetNameController(req, res) {
 
     const stockBySheet = await companyStockModel
       .find({ sheetName: sheetName, ...searchQuery })
-      .lean();
+      .skip(skip)
+      .lean()
+      .limit(limit);
 
     const total = await companyStockModel.countDocuments({
       sheetName: sheetName,
@@ -139,14 +144,16 @@ async function getCompanyStockBySheetNameController(req, res) {
     });
 
     if (stockBySheet.length === 0) {
-      return res
-        .status(204)
-        .json({ message: `No stock data found for sheet: ${sheetName}` });
+      return res.status(204).json({
+        message: `No stock data found for sheet: ${sheetName}`,
+      });
     }
 
     res.status(200).json({
       message: `Successfully retrieved stock data for sheet: ${sheetName}`,
       total,
+      currentPage: page,
+      totalPages: Math.ceil(total / limit),
       stockBySheet,
     });
   } catch (error) {

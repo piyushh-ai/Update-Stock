@@ -46,19 +46,73 @@ const CompanySheetsPage = () => {
       <div className="csp-container">
 
         {/* ── Glass Header ── */}
-        <header className="csp-header">
-          <span className="csp-header__eyebrow">Inventory Management</span>
-          <h1 className="csp-header__title">Company Sheets</h1>
-          <p className="csp-header__subtitle">
-            SELECT A SHEET TO VIEW STOCK DETAILS
-          </p>
-        </header>
+        <div className="top-bar">
+        <div className="title-group">
+          <svg className="title-icon" viewBox="0 0 32 32" fill="none">
+            <rect
+              x="2"
+              y="6"
+              width="28"
+              height="20"
+              rx="4"
+              fill="var(--color-primary)"
+              opacity="0.12"
+            />
+            <rect
+              x="2"
+              y="6"
+              width="28"
+              height="20"
+              rx="4"
+              stroke="var(--color-primary)"
+              strokeWidth="1.5"
+            />
+            <path
+              d="M8 12h16M8 17h10M8 22h6"
+              stroke="var(--color-accent)"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+            />
+            <circle
+              cx="26"
+              cy="22"
+              r="5"
+              fill="var(--color-accent)"
+              opacity="0.15"
+            />
+            <circle
+              cx="26"
+              cy="22"
+              r="3"
+              fill="var(--color-accent)"
+              opacity="0.4"
+            />
+          </svg>
+          <div>
+            <h2 className="page-title">Company Sheets</h2>
+            <p className="page-subtitle">
+              SELECT A SHEET TO VIEW STOCK DETAILS
+            </p>
+          </div>
+        </div>
 
-        {/* ── Search Input ── */}
-        <div className="csp-search">
-          <span className="csp-search__icon" aria-hidden="true">
-            <SearchIcon />
-          </span>
+        {/* Search */}
+        <div className={`search-wrap `}>
+          <svg className="search-icon" viewBox="0 0 20 20" fill="none">
+            <circle
+              cx="8.5"
+              cy="8.5"
+              r="5.5"
+              stroke="currentColor"
+              strokeWidth="1.6"
+            />
+            <path
+              d="M13 13l3.5 3.5"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+            />
+          </svg>
           <input
             className="csp-search__input"
             type="search"
@@ -68,7 +122,10 @@ const CompanySheetsPage = () => {
             aria-label="Search company sheets"
             autoComplete="off"
           />
+          
+          
         </div>
+      </div>
 
         {/* ── Result Meta ── */}
         {!loading && sheets.length > 0 && (
