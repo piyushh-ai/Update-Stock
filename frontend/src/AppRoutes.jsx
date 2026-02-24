@@ -4,6 +4,7 @@ import Menuhook from "./components/common/header+menu/hooks/Menuhook";
 import FullBoschStock from "./boschStock/pages/FullBoschStock";
 import CompanySheetsPage from "./lucasStock/pages/CompanySheetsPage";
 import CompanyStockBySheetPage from "./lucasStock/pages/CompanyStockBySheetPage";
+import BoschPriceList from "./Bosch_Pricelist/pages/BoschPriceList";
 
 export const router = createBrowserRouter([
  {
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
       {
         path: "/company/:sheetName",
         element: <CompanyStockBySheetPage />,
+      },
+      {
+        path: "/BoschPriceList",
+        element: <BoschPriceList/>,
       },
     ],
   },

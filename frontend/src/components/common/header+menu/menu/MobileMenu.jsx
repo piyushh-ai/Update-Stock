@@ -24,7 +24,7 @@ const NAV_ITEMS = [
     icon: "◈",
   },
   {
-    to: "/bosch-stock",
+    to: "/BoschPriceList",
     label: "Bosch Price List",
     desc: "Bosch current MRP",
     icon: "◉",
