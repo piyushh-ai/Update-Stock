@@ -8,6 +8,7 @@ import "../styles/BoschPriceList.scss";
 import { fetchBoschPriceList } from "../api/BoshPriceList.api";
 import { useDebounce } from "../../boschStock/hooks/useDebounce";
 import { usePriceListData } from "../hooks/BoshPriceList";
+import { Link } from "react-router";
 
 const BoschPriceList = () => {
   const [page, setPage] = useState(1);
@@ -152,7 +153,7 @@ const BoschPriceList = () => {
           {!loading &&
             priceList.map((list, index) => (
               <Link
-                key={sheet}
+                key={index}
                 // to={`/company/${sheet}`}
                 className="csp-card"
                 role="listitem"

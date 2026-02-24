@@ -7,8 +7,8 @@ export const fetchBoschPriceList = ({page, limit, search}) => {
   
 };
 
-// export const fetchBoschPriceData = (id, search, page, limit) => {
-//   return axiosInstance.get(`/api/boschPriceList/detail/${id}`, {
-//     params: { search: search, limit: limit, page: page },
-//   });
-// };
+export const fetchBoschPriceData = (id, search, page, limit) => {
+  return axiosInstance.get(`/api/boschPriceList/detail/${id}`, {
+    params: { search: search, limit: limit, page: page },
+  });
+};
