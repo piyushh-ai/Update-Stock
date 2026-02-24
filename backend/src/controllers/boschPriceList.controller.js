@@ -54,11 +54,32 @@ async function getBoschPriceListController(req, res) {
     });
   }
 
-
   res.status(200).json({
     message: "Bosch Price List Data fetch successfully",
     list,
   });
 }
 
-module.exports = getBoschPriceListController;
+async function getBoschPriceListDetailController(req, res) {
+  const id  = req.params._id;
+
+  try {
+    const detail = await BoschpriceListModel.findById(id);
+
+    if (!detail) {
+      return res.status(204).json({ message: "Details not found" });
+    }
+
+    res.status(200).json({
+      message: "details fetched successfully",
+      detail,
+    });
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error: error.message });
+  }
+}
+
+module.exports = {
+  getBoschPriceListController,
+  getBoschPriceListDetailController,
+};

@@ -44,6 +44,7 @@
     justify-content: center;
     gap: var(--space-8);
     animation: cardReveal 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+    margin-top: 3rem;
 
     /* ── Header section ── */
     .top {

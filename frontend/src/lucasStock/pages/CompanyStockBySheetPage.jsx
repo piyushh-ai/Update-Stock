@@ -157,7 +157,7 @@ const StockCard = ({ item, query, index }) => (
             strokeLinecap="round"
           />
         </svg>
-        {formatDate(item.modifiedDate || item.createdAt)}
+        {formatDate(item.modifiedDate)}
       </span>
     </div>
     <div className="card-footer">
@@ -194,7 +194,7 @@ const TableRow = ({ item, query, index }) => (
     <td className="td-sheet">{item.sheetName || "—"}</td>
     <td className="td-serial">{item.sno || "—"}</td>
     <td className="td-date">
-      {formatDate(item.modifiedDate || item.createdAt)}
+      {formatDate(item.modifiedDate )}
     </td>
   </tr>
 );

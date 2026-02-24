@@ -24,13 +24,13 @@ const NAV_ITEMS = [
     icon: "◈",
   },
   {
-    to: "/dffdsfdsfs",
+    to: "/bosch-stock",
     label: "Bosch Price List",
     desc: "Bosch current MRP",
     icon: "◉",
   },
   {
-    to: "/kskdsfdsf",
+    to: "/bosch-stock",
     label: "All Company Catalogues",
     desc: "Browse catalogues by brand",
     icon: "◧",
@@ -40,13 +40,36 @@ const NAV_ITEMS = [
 const MobileMenu = ({ open, setOpen }) => {
   const location = useLocation();
   const startX = useRef(0);
+  const drawerRef = useRef(null);
 
   useEffect(() => {
-    if (open) window.history.pushState({ menu: true }, "");
+    if (open) {
+      document.body.style.overflow = "hidden";
+      window.history.pushState({ menu: true }, "");
+    } else {
+      document.body.style.overflow = "unset";
+    }
 
-    const handleBack = () => { if (open) setOpen(false); };
+    const handleBack = () => {
+      if (open) setOpen(false);
+    };
+
     window.addEventListener("popstate", handleBack);
-    return () => window.removeEventListener("popstate", handleBack);
+    return () => {
+      window.removeEventListener("popstate", handleBack);
+      document.body.style.overflow = "unset";
+    };
+  }, [open, setOpen]);
+
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === "Escape" && open) {
+        setOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleEscape);
+    return () => window.removeEventListener("keydown", handleEscape);
   }, [open, setOpen]);
 
   const handleTouchStart = (e) => {
@@ -75,7 +98,8 @@ const MobileMenu = ({ open, setOpen }) => {
       )}
 
       <div
-        className={`mobile-menu-drawer${open ? " is-open" : ""}`}
+        ref={drawerRef}
+        className={`mobile-menu-drawer ${open ? " is-open" : ""}`}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         role="dialog"
@@ -96,7 +120,7 @@ const MobileMenu = ({ open, setOpen }) => {
 
           {NAV_ITEMS.map((item) => (
             <Link
-              key={item.to}
+              key={`${item.to}-${item.label}`}
               to={item.to}
               onClick={() => setOpen(false)}
               className={`mobile-menu-item${isActive(item) ? " is-active" : ""}`}

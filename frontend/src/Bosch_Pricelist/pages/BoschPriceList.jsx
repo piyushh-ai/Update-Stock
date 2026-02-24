@@ -1,44 +1,9 @@
-import { useState } from "react";
-import { useCompanySheets } from "../hooks/useCompanyStock";
-import { Link } from "react-router-dom";
-import "../styles/CompanySheetsPage.scss";
+import React from 'react'
+import { ArrowIcon, EmptyIcon, SkeletonCard } from '../../lucasStock/pages/CompanySheetsPage';
+import "../styles/BoschPriceList.scss";
 
-// ── Inline SVG icons (no external deps) ─────────────────────────
-
-export const SearchIcon = () => (
-  <svg viewBox="0 0 24 24" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="11" cy="11" r="8" />
-    <line x1="21" y1="21" x2="16.65" y2="16.65" />
-  </svg>
-);
-
-export const ArrowIcon = () => (
-  <svg viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-    <line x1="5" y1="12" x2="19" y2="12" />
-    <polyline points="12 5 19 12 12 19" />
-  </svg>
-);
-
-export const EmptyIcon = () => (
-  <svg viewBox="0 0 24 24" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
-    <path d="M3 7h18M3 12h18M3 17h10" />
-  </svg>
-);
-
-// ── Skeleton card ────────────────────────────────────────────────
-
-export const SkeletonCard = () => (
-  <div className="csp-skeleton" aria-hidden="true">
-    <div className="csp-skeleton__line csp-skeleton__line--short" />
-    <div className="csp-skeleton__line csp-skeleton__line--medium" />
-    <div className="csp-skeleton__line csp-skeleton__line--long" />
-  </div>
-);
-
-// ── Main Page ────────────────────────────────────────────────────
-
-const CompanySheetsPage = () => {
-  const [search, setSearch] = useState("");
+const BoschPriceList = () => {
+   const [search, setSearch] = useState("");
   const { sheets, loading } = useCompanySheets(search);
 
   return (
@@ -152,7 +117,7 @@ const CompanySheetsPage = () => {
           {!loading && sheets.length === 0 && (
             <div className="csp-empty" role="status">
               <div className="csp-empty__icon">
-                <EmptyIcon />
+                <EmptyIcon   />
               </div>
               <p className="csp-empty__title">No sheets found</p>
               <p className="csp-empty__sub">
@@ -193,6 +158,6 @@ const CompanySheetsPage = () => {
       </div>
     </main>
   );
-};
+}
 
-export default CompanySheetsPage;
+export default BoschPriceList
