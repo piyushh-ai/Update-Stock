@@ -44,11 +44,20 @@ app.use("/api/boschPriceList", boschPriceListRoute);
 app.use("/api/boschStock", boschStockRouter);
 app.use("/api/companyStock", companyStockRouter);
 
+app.get("/version", (req, res) => {
+  res.json({ version: "2.0.1" });
+});
+
 const distPath = path.join(__dirname, "../dist");
 
+/**
+ * frontend linking
+ */
 app.use(express.static(distPath));
 
 app.get("/{*any}", (req, res) => {
   res.sendFile(path.join(distPath, "index.html"));
 });
+
+
 module.exports = app;
