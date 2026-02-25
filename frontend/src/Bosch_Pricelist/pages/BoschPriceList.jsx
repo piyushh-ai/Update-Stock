@@ -22,8 +22,6 @@ const BoschPriceList = () => {
     search: debounseSearch,
   });
 
-  
-
   useEffect(() => {
     setPage(1);
   }, [debounseSearch]);
@@ -154,10 +152,10 @@ const BoschPriceList = () => {
             priceList.map((list, index) => (
               <Link
                 key={index}
-                // to={`/company/${sheet}`}
+                to={`/BoschPriceList/${list._id}`}
                 className="csp-card"
                 role="listitem"
-                // aria-label={`Open ${sheet} sheet`}
+                aria-label={`Open ${list} sheet`}
               >
                 <div className="csp-card__header">
                   <span className="csp-card__index">
@@ -176,8 +174,44 @@ const BoschPriceList = () => {
             ))}
         </div>
       </div>
+      {!loading && (
+        <div className="pagination">
+          <button
+            className="page-btn"
+            onClick={() => setPage((p) => Math.max(p - 1, 1))}
+            disabled={page === 1}
+          >
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+              <path
+                d="M10 3L5 8l5 5"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            Prev
+          </button>
+          <span className="page-indicator">Page {page}</span>
+          <button
+            className="page-btn"
+            onClick={() => setPage((p) => p + 1)}
+            disabled={priceList.length < 10}
+          >
+            Next
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+              <path
+                d="M6 3l5 5-5 5"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+      )}
     </main>
- 
   );
 };
 

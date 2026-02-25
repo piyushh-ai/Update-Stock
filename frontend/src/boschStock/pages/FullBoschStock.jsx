@@ -429,7 +429,7 @@ const FullBoschStock = () => {
           <button
             className="page-btn"
             onClick={() => setPage((p) => p + 1)}
-            disabled={boschStock.length < 20}
+            disabled={boschStock.length < 10}
           >
             Next
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none">

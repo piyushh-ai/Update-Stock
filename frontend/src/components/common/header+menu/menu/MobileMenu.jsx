@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./MobileMenu.scss";
 
-const NAV_ITEMS = [
+export const NAV_ITEMS = [
   {
     to: "/",
     label: "Home",
@@ -22,18 +22,21 @@ const NAV_ITEMS = [
     label: "Bosch Stock",
     desc: "Bosch parts inventory",
     icon: "◈",
+    startsWith: true,
   },
   {
     to: "/BoschPriceList",
     label: "Bosch Price List",
     desc: "Bosch current MRP",
     icon: "◉",
+    startsWith: true,
   },
   {
-    to: "/bosch-stock",
+    to: "/catalogues",
     label: "All Company Catalogues",
     desc: "Browse catalogues by brand",
     icon: "◧",
+    startsWith: true,
   },
 ];
 
@@ -123,7 +126,7 @@ const MobileMenu = ({ open, setOpen }) => {
               key={`${item.to}-${item.label}`}
               to={item.to}
               onClick={() => setOpen(false)}
-              className={`mobile-menu-item${isActive(item) ? " is-active" : ""}`}
+              className={`mobile-menu-item ${isActive(item) ? " is-active" : ""}`}
             >
               <span className="mobile-menu-item__icon">{item.icon}</span>
               <span className="mobile-menu-item__text">

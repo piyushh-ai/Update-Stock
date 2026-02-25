@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaArrowLeft } from "react-icons/fa6";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import "./Header.scss";
+import { NAV_ITEMS } from "../menu/MobileMenu";
 
 const Header = ({ setMenuOpen }) => {
   const navigate = useNavigate();
@@ -27,13 +28,7 @@ const Header = ({ setMenuOpen }) => {
     }
   };
 
-  const NAV_ITEMS = [
-    { to: "/", label: "Home", exact: true },
-    { to: "/company", label: "Companies", startsWith: true },
-    { to: "/bosch-stock", label: "Bosch Stock", startsWith: true },
-    { to: "/bosch-stock", label: "Bosch Price List", startsWith: true },
-    { to: "/bosch-stock", label: "All Company Catalogues", startsWith: true },
-  ];
+  const DESKTOP_NAV_ITEMS = NAV_ITEMS
 
   const isNavActive = (item) => {
     if (item.exact) return location.pathname === item.to;
@@ -76,7 +71,7 @@ const Header = ({ setMenuOpen }) => {
           </button>
         ) : (
           <nav className="header__nav">
-            {NAV_ITEMS.map((item) => (
+            {DESKTOP_NAV_ITEMS.map((item) => (
               <Link
                 key={`${item.to}-${item.label}`}
                 to={item.to}

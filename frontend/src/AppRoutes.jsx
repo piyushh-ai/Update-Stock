@@ -5,6 +5,7 @@ import FullBoschStock from "./boschStock/pages/FullBoschStock";
 import CompanySheetsPage from "./lucasStock/pages/CompanySheetsPage";
 import CompanyStockBySheetPage from "./lucasStock/pages/CompanyStockBySheetPage";
 import BoschPriceList from "./Bosch_Pricelist/pages/BoschPriceList";
+import BoschPriceDetail from "./Bosch_Pricelist/pages/BoschPriceDetail"
 
 export const router = createBrowserRouter([
  {
@@ -30,6 +31,10 @@ export const router = createBrowserRouter([
       {
         path: "/BoschPriceList",
         element: <BoschPriceList/>,
+      },
+      {
+        path: "/BoschPriceList/:id",
+        element: <BoschPriceDetail/>,
       },
     ],
   },

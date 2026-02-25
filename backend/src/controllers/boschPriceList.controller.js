@@ -61,9 +61,9 @@ async function getBoschPriceListController(req, res) {
 }
 
 async function getBoschPriceListDetailController(req, res) {
-  const id  = req.params._id;
-
+  
   try {
+    const id  = req.params._id;
     const detail = await BoschpriceListModel.findById(id);
 
     if (!detail) {
