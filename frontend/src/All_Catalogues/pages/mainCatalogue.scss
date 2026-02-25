@@ -1,0 +1,436 @@
+// ═══════════════════════════════════════════════════════════════
+//  CompanySheetsPage — Premium Inventory Dashboard
+//  Uses only CSS custom properties from index.css
+// ═══════════════════════════════════════════════════════════════
+
+// ── Keyframes ───────────────────────────────────────────────────
+
+@keyframes shimmer {
+  0%   { background-position: -600px 0; }
+  100% { background-position:  600px 0; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(59, 110, 165, 0); }
+  50%       { box-shadow: 0 0 0 6px rgba(59, 110, 165, 0.12); }
+}
+
+// ── Page Wrapper ─────────────────────────────────────────────────
+
+.csp-page {
+  min-height: 100%;
+  background-color: var(--bg-page);
+  padding: var(--space-10) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInUp 0.45s ease both;
+  
+  
+
+  @media (max-width: 640px) {
+    padding: var(--space-6) var(--space-4);
+  }
+}
+
+// ── Centered Container ───────────────────────────────────────────
+
+.csp-container {
+  width: 100%;
+  max-width: 1080px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+// ── Header Card (glass) ──────────────────────────────────────────
+
+.csp-header {
+  background: var(--surface-overlay);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: var(--space-8) var(--space-10);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  animation: fadeInUp 0.45s ease 0.05s both;
+
+  @media (max-width: 640px) {
+    padding: var(--space-6);
+    border-radius: var(--radius-md);
+  }
+
+  &__eyebrow {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 2px;
+      background: var(--color-accent);
+      border-radius: var(--radius-pill);
+    }
+  }
+
+  &__title {
+    font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+    font-weight: 800;
+    color: var(--color-primary);
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin: 0;
+  }
+
+  &__subtitle {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.04em;
+    margin-top: var(--space-1);
+  }
+}
+
+// ── Search Bar ───────────────────────────────────────────────────
+
+.csp-search {
+  position: relative;
+  animation: fadeInUp 0.45s ease 0.1s both;
+
+  &__icon {
+    position: absolute;
+    left: var(--space-5);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    pointer-events: none;
+    transition: var(--transition-fast);
+    display: flex;
+    align-items: center;
+
+    svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      fill: none;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding: var(--space-4) var(--space-5) var(--space-4) calc(var(--space-5) + 18px + var(--space-3));
+    border-radius: var(--radius-pill);
+    border: 1.5px solid var(--border-medium);
+    background: var(--surface-primary);
+    color: var(--text-primary);
+    font-size: 0.9375rem;
+    font-family: inherit;
+    box-shadow: var(--shadow-xs);
+    outline: none;
+    transition: var(--transition-smooth);
+    caret-color: var(--color-accent);
+
+    &::placeholder {
+      color: var(--text-muted);
+    }
+
+    &:focus {
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 4px rgba(59, 110, 165, 0.12), var(--shadow-xs);
+      background: var(--surface-primary);
+      animation: pulseGlow 1.8s ease infinite;
+
+      & + .csp-search__icon,
+      ~ .csp-search__icon {
+        color: var(--color-accent);
+      }
+    }
+  }
+
+  // Update icon color when input is focused via sibling trick (icon is before input in DOM)
+  &:focus-within .csp-search__icon {
+    color: var(--color-accent);
+  }
+}
+
+// ── Result Count ─────────────────────────────────────────────────
+
+.csp-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-1);
+  animation: fadeInUp 0.45s ease 0.15s both;
+
+  &__count {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    letter-spacing: 0.03em;
+
+    strong {
+      color: var(--text-secondary);
+      font-weight: 600;
+    }
+  }
+
+  &__badge {
+    background: var(--color-accent-subtle);
+    color: var(--color-accent);
+    border-radius: var(--radius-pill);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: var(--space-1) var(--space-3);
+  }
+}
+
+// ── Grid ─────────────────────────────────────────────────────────
+
+.csp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  animation: fadeInUp 0.45s ease 0.2s both;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}
+
+// ── Sheet Card ───────────────────────────────────────────────────
+
+.csp-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+
+  // Accent strip at top
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(
+      90deg,
+      var(--color-primary),
+      var(--color-accent)
+    );
+    opacity: 0;
+    transition: var(--transition-smooth);
+  }
+
+  &:hover,
+  &:focus-visible {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-card);
+    transform: translateY(-4px);
+    outline: none;
+
+    &::before {
+      opacity: 0; // hide strip on hover since background is accent
+    }
+
+    .csp-card__body {
+      border-top-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .csp-card__index {
+      background: rgba(255, 255, 255, 0.18);
+      color: var(--text-on-accent);
+    }
+
+    .csp-card__name {
+      color: var(--text-on-accent);
+    }
+
+    .csp-card__sub {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .csp-card__arrow {
+      opacity: 1;
+      color: var(--text-on-accent);
+      transform: translateX(2px);
+    }
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-soft);
+  }
+
+  // Lift strip on rest state
+  &:not(:hover)::before {
+    opacity: 1;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-5) var(--space-5) var(--space-3);
+  }
+
+  &__index {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+    background: var(--color-accent-subtle);
+    border-radius: var(--radius-pill);
+    padding: var(--space-1) var(--space-3);
+    transition: var(--transition-smooth);
+  }
+
+  &__arrow {
+    opacity: 0;
+    color: var(--text-muted);
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+
+    svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+    }
+  }
+
+  &__body {
+    padding: var(--space-2) var(--space-5) var(--space-5);
+    border-top: 1px solid var(--border-light);
+    margin-top: auto;
+    transition: var(--transition-smooth);
+  }
+
+  &__name {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+    line-height: 1.3;
+    transition: var(--transition-smooth);
+    word-break: break-word;
+  }
+
+  &__sub {
+    margin-top: var(--space-1);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+    transition: var(--transition-smooth);
+  }
+}
+
+// ── Skeleton Loading ─────────────────────────────────────────────
+
+.csp-skeleton {
+  background: var(--surface-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
+  overflow: hidden;
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+
+  &__line {
+    border-radius: var(--radius-sm);
+    background: linear-gradient(
+      90deg,
+      var(--bg-soft) 0px,
+      var(--bg-muted) 200px,
+      var(--bg-soft) 400px
+    );
+    background-size: 600px 100%;
+    animation: shimmer 1.4s ease infinite;
+  }
+
+  &__line--short  { height: 12px; width: 35%; }
+  &__line--medium { height: 16px; width: 70%; margin-top: var(--space-2); }
+  &__line--long   { height: 10px; width: 55%; }
+}
+
+// ── Empty State ──────────────────────────────────────────────────
+
+.csp-empty {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-12) var(--space-6);
+  gap: var(--space-4);
+  text-align: center;
+  animation: fadeInUp 0.35s ease both;
+
+  &__icon {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-md);
+    background: var(--color-accent-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+
+    svg {
+      width: 26px;
+      height: 26px;
+      stroke: currentColor;
+      fill: none;
+    }
+  }
+
+  &__title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  &__sub {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    max-width: 280px;
+  }
+}
