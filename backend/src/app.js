@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 
 /**
  * all routes are imported here
@@ -12,6 +13,8 @@ const companyStockRouter = require("./routes/companyStock.routes.js");
 const boschFilterRoute = require("./routes/boschFilter.route.js");
 const autolekFilterRoute = require("./routes/autolekFilter.route.js");
 const boschPriceListRoute = require("./routes/boschPriceList.route.js");
+// const dist = require("../dist");
+// const distHtml = require("../dist/index.html");
 
 const app = express();
 app.use(express.json());
@@ -21,9 +24,6 @@ app.use(
     credentials: true,
   }),
 );
-app.use(express.static("../dist"));
-
-
 
 /**
  * all catalog routes are defined here
@@ -36,7 +36,7 @@ app.use("/api/autolek-filters", autolekFilterRoute);
 /**
  * all price list routes are defined here
  */
-app.use("/api/boschPriceList", boschPriceListRoute)
+app.use("/api/boschPriceList", boschPriceListRoute);
 
 /**
  * all stock routes are defined here
@@ -44,4 +44,11 @@ app.use("/api/boschPriceList", boschPriceListRoute)
 app.use("/api/boschStock", boschStockRouter);
 app.use("/api/companyStock", companyStockRouter);
 
+const distPath = path.join(__dirname, "../dist");
+
+app.use(express.static(distPath));
+
+app.get("/{*any}", (req, res) => {
+  res.sendFile(path.join(distPath, "index.html"));
+});
 module.exports = app;
