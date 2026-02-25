@@ -21,10 +21,9 @@ app.use(
     credentials: true,
   }),
 );
+app.use(express.static("../dist"));
 
-app.get("/", (req, res) => {
-  res.json({ working: true });
-});
+
 
 /**
  * all catalog routes are defined here

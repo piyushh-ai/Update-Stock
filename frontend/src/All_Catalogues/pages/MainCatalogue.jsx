@@ -73,7 +73,7 @@ const MainCatalogue = () => {
             <div>
               <h2 className="page-title">Company Sheets</h2>
               <p className="page-subtitle">
-                SELECT A SHEET TO VIEW STOCK DETAILS
+                SELECT A COMPANY TO VIEW FULL CATALOGUE
               </p>
             </div>
           </div>
@@ -85,9 +85,8 @@ const MainCatalogue = () => {
             <span className="csp-meta__count">
               Showing <strong>{apiList.length}</strong> sheet
               {apiList.length !== 1 ? "s" : ""}
-              
             </span>
-            <span className="csp-meta__badge">Inventory</span>
+            <span className="csp-meta__badge">Catalogues</span>
           </div>
         )}
 
@@ -104,7 +103,6 @@ const MainCatalogue = () => {
                 <EmptyIcon />
               </div>
               <p className="csp-empty__title">No sheets found</p>
-              
             </div>
           )}
 
@@ -128,7 +126,7 @@ const MainCatalogue = () => {
                 </div>
                 <div className="csp-card__body">
                   <p className="csp-card__name">{list.label}</p>
-                  <p className="csp-card__sub">View stock details →</p>
+                  <p className="csp-card__sub">View Full Catalogue →</p>
                 </div>
               </Link>
             ))}
