@@ -221,7 +221,6 @@ const FullBoschStock = () => {
   });
   const { boschStock } = useBoschStockStore();
 
-  console.log(boschStock);
 
   useEffect(() => {
     setPage(1);

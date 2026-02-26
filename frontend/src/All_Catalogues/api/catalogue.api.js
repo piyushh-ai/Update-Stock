@@ -5,7 +5,7 @@ export const fetchAllCatalogues = async ({ page, limit, search, company }) => {
     Bosch_PC_Filter: "/bosch-filters",
     Autolek_FIlter: "/autolek-filters",
     Bosch_PC_Starter: "/bosch-electric-cat/starter",
-    Bosch_PC_Alternaor: "/bosch-electric-cat/alternator",
+    Bosch_PC_Alternator: "/bosch-electric-cat/alternator",
     RMP_Bearings_Catalogues: "/rmpCat",
   };
 

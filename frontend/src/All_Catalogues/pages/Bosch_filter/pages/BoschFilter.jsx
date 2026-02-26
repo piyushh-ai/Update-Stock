@@ -1,33 +1,34 @@
 // DataPage.jsx
 import { useParams } from "react-router-dom";
-import { useCataloues } from "../hooks/cataloguesHook.js";
+import { useCatalogues } from "../../../hooks/cataloguesHook.js";
 
-const CatalogueDataPage = () => {
+
+const BoschFilter = () => {
   const { company } = useParams();
-  const { data, loading } = useCataloues({
+  const { data, loading } = useCatalogues({
     page: 1,
     limit: 10,
     search: "",
     company,
   });
 
-  console.log(company);
+  
 
   if (loading) return <h2>Loading...</h2>;
 
   return (
     <div>
-      {/* <h2>{type} Data</h2>
+      <h2>{company} Data</h2>
 
       {data?.map((item) => (
         <div key={item.id} className="card">
-          <h4>{item.name}</h4>
+          <h4>{item.brand}</h4>
           <p>{item.description}</p>
         </div>
-      ))} */}
+      ))}
       ddfdfsfsf
     </div>
   );
 };
 
-export default CatalogueDataPage;
+export default BoschFilter;

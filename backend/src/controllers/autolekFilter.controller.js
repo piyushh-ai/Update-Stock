@@ -69,7 +69,7 @@ async function getautolekFilter(req, res) {
       total: total,
       page: page,
       limit: limit,
-      data: autolekFilter,
+       autolekFilter,
     });
   } catch (error) {
     res.status(500).json({

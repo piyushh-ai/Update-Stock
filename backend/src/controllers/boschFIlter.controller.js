@@ -67,7 +67,7 @@ async function getAllBoschFilters(req, res) {
       total: total,
       page: page,
       limit: limit,
-      data: boschFilters,
+      boschFilters,
     });
   } catch (error) {
     res

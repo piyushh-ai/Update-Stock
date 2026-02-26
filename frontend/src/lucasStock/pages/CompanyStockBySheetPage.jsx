@@ -219,7 +219,6 @@ const FullBoschStock = () => {
     search: debouncedSearch,
   });
 
-  console.log(stock);
 
   useEffect(() => {
     setPage(1);

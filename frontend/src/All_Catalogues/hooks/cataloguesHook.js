@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchAllCatalogues } from "../api/catalogue.api";
 
-export const useCataloues = (params = {}) => {
+export const useCatalogues = (params = {}) => {
   const {
     page = 1,
     limit = 10,
