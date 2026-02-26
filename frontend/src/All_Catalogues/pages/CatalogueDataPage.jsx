@@ -1,33 +1,15 @@
 // DataPage.jsx
 import { useParams } from "react-router-dom";
-import { useCataloues } from "../hooks/cataloguesHook.js";
+import BoschFilter from "./Bosch_filter/pages/boschFilter.jsx";
+import AutolekFilter from "./Autolek_filter/pages/AutolekFilter.jsx";
 
 const CatalogueDataPage = () => {
   const { company } = useParams();
-  const { data, loading } = useCataloues({
-    page: 1,
-    limit: 10,
-    search: "",
-    company,
-  });
 
-  console.log(company);
+  if (company === "Bosch_PC_Filter") return <BoschFilter />;
+  if (company === "Autolek_FIlter") return <AutolekFilter />;
 
-  if (loading) return <h2>Loading...</h2>;
-
-  return (
-    <div>
-      {/* <h2>{type} Data</h2>
-
-      {data?.map((item) => (
-        <div key={item.id} className="card">
-          <h4>{item.name}</h4>
-          <p>{item.description}</p>
-        </div>
-      ))} */}
-      ddfdfsfsf
-    </div>
-  );
+  return <h2>Company not found</h2>;
 };
 
 export default CatalogueDataPage;

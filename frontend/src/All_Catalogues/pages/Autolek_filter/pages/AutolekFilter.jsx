@@ -2,7 +2,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useCatalogues } from "../../../hooks/cataloguesHook.js";
-import "../styles/BoschFilter.scss";
+import "../../Bosch_filter/styles/BoschFilter.scss";
 
 /* ────────────────────────────────────────────────────────────────
    HELPER FUNCTIONS
@@ -23,9 +23,7 @@ const highlight = (text, query = "") => {
   return (
     <>
       {safeText.slice(0, idx)}
-      <mark className="hl">
-        {safeText.slice(idx, idx + safeQuery.length)}
-      </mark>
+      <mark className="hl">{safeText.slice(idx, idx + safeQuery.length)}</mark>
       {safeText.slice(idx + safeQuery.length)}
     </>
   );
@@ -156,9 +154,7 @@ const FilterCard = ({ item, query, index }) => (
 
     <div className="card-title">{item.brand || "—"}</div>
 
-    <div className="card-desc">
-      {highlight(item.application || "—", query)}
-    </div>
+    <div className="card-desc">{highlight(item.application || "—", query)}</div>
 
     <div className="card-footer">
       <span className="footer-label">Type</span>
@@ -173,9 +169,9 @@ const FilterCard = ({ item, query, index }) => (
    MAIN COMPONENT
    ──────────────────────────────────────────────────────────────── */
 
-const BoschFilter = () => {
+const AutolekFilter = () => {
   const { company } = useParams();
-  
+
   const [page, setPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
   const [focused, setFocused] = useState(false);
@@ -234,7 +230,7 @@ const BoschFilter = () => {
   }, []);
 
   /* Derived states */
-  const finalData = data?.boschFilters || [];
+  const finalData = data?.autolekFilter || [];
   const hasData = finalData.length > 0;
   const isEmpty = !loading && !hasData;
 
@@ -288,7 +284,7 @@ const BoschFilter = () => {
             />
           </svg>
           <div>
-            <h2 className="page-title">Bosch PC Filters</h2>
+            <h2 className="page-title">Autolek Filters</h2>
             <p className="page-subtitle">
               {hasData
                 ? `${finalData.length} filter${finalData.length !== 1 ? "s" : ""} available`
@@ -436,4 +432,4 @@ const BoschFilter = () => {
   );
 };
 
-export default BoschFilter;
+export default AutolekFilter;

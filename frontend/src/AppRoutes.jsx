@@ -5,14 +5,16 @@ import FullBoschStock from "./boschStock/pages/FullBoschStock";
 import CompanySheetsPage from "./lucasStock/pages/CompanySheetsPage";
 import CompanyStockBySheetPage from "./lucasStock/pages/CompanyStockBySheetPage";
 import BoschPriceList from "./Bosch_Pricelist/pages/BoschPriceList";
-import BoschPriceDetail from "./Bosch_Pricelist/pages/BoschPriceDetail"
+import BoschPriceDetail from "./Bosch_Pricelist/pages/BoschPriceDetail";
 import MainCatalogue from "./All_Catalogues/pages/MainCatalogue";
 import BoschFilter from "./All_Catalogues/pages/Bosch_filter/pages/boschFilter";
+import AutolekFilter from "./All_Catalogues/pages/Autolek_filter/pages/AutolekFilter";
+import CatalogueDataPage from "./All_Catalogues/pages/CatalogueDataPage";
 
 export const router = createBrowserRouter([
- {
+  {
     path: "/",
-    element: <Menuhook />,   
+    element: <Menuhook />,
     children: [
       {
         index: true,
@@ -32,19 +34,19 @@ export const router = createBrowserRouter([
       },
       {
         path: "/BoschPriceList",
-        element: <BoschPriceList/>,
+        element: <BoschPriceList />,
       },
       {
         path: "/BoschPriceList/:id",
-        element: <BoschPriceDetail/>,
+        element: <BoschPriceDetail />,
       },
       {
         path: "/catalogues",
-        element: <MainCatalogue/>,
+        element: <MainCatalogue />,
       },
       {
         path: "/catalogues/:company",
-        element: <BoschFilter/>,
+        element: <CatalogueDataPage />,
       },
     ],
   },

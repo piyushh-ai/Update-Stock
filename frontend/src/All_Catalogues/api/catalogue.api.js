@@ -21,7 +21,6 @@ export const fetchAllCatalogues = async ({ page, limit, search, company }) => {
       search: search,
     },
   });
-  console.log(response);
 
   return response.data;
 };

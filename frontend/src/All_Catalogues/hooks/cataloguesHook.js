@@ -21,6 +21,7 @@ export const useCatalogues = (params = {}) => {
         setData(data);
         
         
+        
       } catch (err) {
         setError("Something went wrong");
       } finally {
