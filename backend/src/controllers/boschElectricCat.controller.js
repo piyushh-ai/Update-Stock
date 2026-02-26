@@ -136,7 +136,7 @@ async function boschAlternatorCatController(req, res) {
     const total = await boschAlternatorCatModel.countDocuments(searchQuery);
 
     if (alternatorData.length === 0) {
-      return res.status(404).json({ message: "No alternator data found" });
+      return res.status(204).json({ message: "No alternator data found" });
     }
     res.status(200).json({
       message: "Bosch alternator catalog data fetched successfully",

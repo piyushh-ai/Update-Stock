@@ -5,15 +5,37 @@ import {
   SkeletonCard,
 } from "../../lucasStock/pages/CompanySheetsPage";
 import { Link } from "react-router";
+import "../styles/maincatalogue.scss";
 
 const MainCatalogue = () => {
   const [loading, setLoading] = useState(true);
 
   const apiList = [
-    { label: "API 1", type: "api1" },
-    { label: "API 2", type: "api2" },
-    { label: "API 3", type: "api3" },
-    { label: "API 4", type: "api4" },
+    {
+      label: "Bosch PC Filter",
+      image: "/catalogue_images/bosch_filter.png",
+      type: "Bosch_PC_Filter",
+    },
+    {
+      label: "Autolek Filters",
+      image: "/catalogue_images/autolek_filter.png",
+      type: "Autolek_FIlter",
+    },
+    {
+      label: "Bosch PC Starter Motor",
+      image: "/catalogue_images/bosch_electric.png",
+      type: "Bosch_PC_Starter",
+    },
+    {
+      label: "Bosch PC Alternator",
+      image: "/catalogue_images/bosch_electric.png",
+      type: "Bosch_PC_Alternator",
+    },
+    {
+      label: "RMP Bearings Catalogues",
+      image: "/catalogue_images/bosch_filter.png",
+      type: "RMP_Bearings_Catalogues",
+    },
   ];
 
   useEffect(() => {
@@ -71,7 +93,7 @@ const MainCatalogue = () => {
               />
             </svg>
             <div>
-              <h2 className="page-title">Company Sheets</h2>
+              <h2 className="page-title">Catalogues</h2>
               <p className="page-subtitle">
                 SELECT A COMPANY TO VIEW FULL CATALOGUE
               </p>
@@ -83,7 +105,7 @@ const MainCatalogue = () => {
         {!loading && apiList.length > 0 && (
           <div className="csp-meta">
             <span className="csp-meta__count">
-              Showing <strong>{apiList.length}</strong> sheet
+              Showing <strong>{apiList.length}</strong> Catalogues
               {apiList.length !== 1 ? "s" : ""}
             </span>
             <span className="csp-meta__badge">Catalogues</span>
@@ -102,7 +124,7 @@ const MainCatalogue = () => {
               <div className="csp-empty__icon">
                 <EmptyIcon />
               </div>
-              <p className="csp-empty__title">No sheets found</p>
+              <p className="csp-empty__title">No catalogues found</p>
             </div>
           )}
 
@@ -111,14 +133,14 @@ const MainCatalogue = () => {
             apiList.map((list, index) => (
               <Link
                 key={list.label}
-                to={`/company/${list}`}
+                to={`/catalogues/${list.type}`}
                 className="csp-card"
                 role="listitem"
-                aria-label={`Open ${list} sheet`}
+                aria-label={`Open ${list.label} sheet`}
               >
                 <div className="csp-card__header">
-                  <span className="csp-card__index">
-                    #{String(index + 1).padStart(2, "0")}
+                  <span className="csp-card__image">
+                    <img src={list.image} alt="" />
                   </span>
                   <span className="csp-card__arrow">
                     <ArrowIcon />

@@ -7,6 +7,7 @@ import CompanyStockBySheetPage from "./lucasStock/pages/CompanyStockBySheetPage"
 import BoschPriceList from "./Bosch_Pricelist/pages/BoschPriceList";
 import BoschPriceDetail from "./Bosch_Pricelist/pages/BoschPriceDetail"
 import MainCatalogue from "./All_Catalogues/pages/MainCatalogue";
+import CatalogueDataPage from "./All_Catalogues/pages/CatalogueDataPage";
 
 export const router = createBrowserRouter([
  {
@@ -40,6 +41,10 @@ export const router = createBrowserRouter([
       {
         path: "/catalogues",
         element: <MainCatalogue/>,
+      },
+      {
+        path: "/catalogues/:company",
+        element: <CatalogueDataPage/>,
       },
     ],
   },
