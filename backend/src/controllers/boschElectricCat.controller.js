@@ -92,38 +92,41 @@ async function boschAlternatorCatController(req, res) {
       const words = search.split(/\s+/); // split input into words
 
       searchQuery = {
-        $and: words.map((word) => ({
-          $or: [
-            // Normal field search
-            { brandName: { $regex: word, $options: "i" } },
-            { application: { $regex: word, $options: "i" } },
-            { OEPartNo: { $regex: word, $options: "i" } },
-            { BoschPartNo: { $regex: word, $options: "i" } },
-            { rotor: { $regex: word, $options: "i" } },
-            { stator: { $regex: word, $options: "i" } },
-            { rectifier: { $regex: word, $options: "i" } },
-            { regulator: { $regex: word, $options: "i" } },
-            { pulley: { $regex: word, $options: "i" } },
-            { vaccumPump: { $regex: word, $options: "i" } },
+        $and: words.map((word) => {
+          const cleanWord = word.replace(/\s+/g, ""); // remove all spaces
 
-            // Space-insensitive part number search
-            {
-              $expr: {
-                $regexMatch: {
-                  input: {
-                    $replaceAll: {
-                      input: "$BoschPartNo",
-                      find: " ",
-                      replacement: "",
+          return {
+            $or: [
+              { brandName: { $regex: word, $options: "i" } },
+              { application: { $regex: word, $options: "i" } },
+              { OEPartNo: { $regex: word, $options: "i" } },
+              { BoschPartNo: { $regex: word, $options: "i" } },
+              { rotor: { $regex: word, $options: "i" } },
+              { stator: { $regex: word, $options: "i" } },
+              { rectifier: { $regex: word, $options: "i" } },
+              { regulator: { $regex: word, $options: "i" } },
+              { pulley: { $regex: word, $options: "i" } },
+              { vaccumPump: { $regex: word, $options: "i" } },
+
+              // Space-insensitive search
+              {
+                $expr: {
+                  $regexMatch: {
+                    input: {
+                      $replaceAll: {
+                        input: { $ifNull: ["$BoschPartNo", ""] },
+                        find: " ",
+                        replacement: "",
+                      },
                     },
+                    regex: cleanWord,
+                    options: "i",
                   },
-                  regex: word.replace(/\s+/g, ""),
-                  options: "i",
                 },
               },
-            },
-          ],
-        })),
+            ],
+          };
+        }),
       };
     }
 
