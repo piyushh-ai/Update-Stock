@@ -45,7 +45,7 @@ app.use("/api/boschStock", boschStockRouter);
 app.use("/api/companyStock", companyStockRouter);
 
 app.get("/version", (req, res) => {
-  res.json({ version: "2.0.1", updateUrl:"https://drive.google.com/file/d/1nhjwCBPej8o0mjgtY6MIN2kNL0W1Pt9l/view?usp=sharing", forceUpdate:true });
+  res.json({ version: "2.0.2", updateUrl:"https://drive.google.com/file/d/1nhjwCBPej8o0mjgtY6MIN2kNL0W1Pt9l/view?usp=sharing", forceUpdate:true });
 });
 
 const distPath = path.join(__dirname, "../dist");
