@@ -1,0 +1,818 @@
+[
+  {
+    "S.NO.": 1.0,
+    "PARTNO": "DIESEL FILTER",
+    "ITEMS": "",
+    "DESCRIPTION": ""
+  },
+  {
+    "S.NO.": 2.0,
+    "PARTNO": "1457 431 003 ",
+    "ITEMS": "D.FILTER",
+    "DESCRIPTION": "1LTR CLOTH"
+  },
+  {
+    "S.NO.": 3.0,
+    "PARTNO": "F 002 H24 406 ",
+    "ITEMS": "D.FILTER",
+    "DESCRIPTION": "1LTR PAPER"
+  },
+  {
+    "S.NO.": 4.0,
+    "PARTNO": "9451 037 409 ",
+    "ITEMS": "D.FILTER",
+    "DESCRIPTION": "1.1 LTR COIL"
+  },
+  {
+    "S.NO.": 5.0,
+    "PARTNO": "9451 037 404 ",
+    "ITEMS": "D.FILTER",
+    "DESCRIPTION": "0.5 LTR CLOTH"
+  },
+  {
+    "S.NO.": 6.0,
+    "PARTNO": "F 002 H22 405 ",
+    "ITEMS": "D.FILTER",
+    "DESCRIPTION": "0.5 LTR PAPER"
+  },
+  {
+    "S.NO.": 7.0,
+    "PARTNO": "9451 037 407 ",
+    "ITEMS": "D.FILTER",
+    "DESCRIPTION": "0.5 LTR COIL"
+  },
+  {
+    "S.NO.": "",
+    "PARTNO": "F 002 H27 407",
+    "ITEMS": "D.FILTER",
+    "DESCRIPTION": "0.5 LTR COIL"
+  },
+  {
+    "S.NO.": 8.0,
+    "PARTNO": "F 002 H27 737 ",
+    "ITEMS": "D.F. KIT",
+    "DESCRIPTION": "0.5 LTR CLOTH + PAPER SET"
+  },
+  {
+    "S.NO.": 9.0,
+    "PARTNO": "F 002 H27 738",
+    "ITEMS": "D.F. KIT",
+    "DESCRIPTION": "0.5LTR CLOTH + COIL SET"
+  },
+  {
+    "S.NO.": 10.0,
+    "PARTNO": "F 002 H27 739",
+    "ITEMS": "D.F. KIT                                            ",
+    "DESCRIPTION": "0.5LTR COIL SET"
+  },
+  {
+    "S.NO.": 12.0,
+    "PARTNO": "F 002 H20 239",
+    "ITEMS": "D.FILTER ",
+    "DESCRIPTION": "TC SMALL"
+  },
+  {
+    "S.NO.": 13.0,
+    "PARTNO": "F 002 H21 252",
+    "ITEMS": "D.FILTER ",
+    "DESCRIPTION": "T.C.BIG"
+  },
+  {
+    "S.NO.": 14.0,
+    "PARTNO": "F 002 H20 306",
+    "ITEMS": "D.FILTER",
+    "DESCRIPTION": "NEW HOLLAND PRIMARY"
+  },
+  {
+    "S.NO.": 15.0,
+    "PARTNO": "F 002 H20 308",
+    "ITEMS": "D.FILTER",
+    "DESCRIPTION": "NEW HOLLAND SECONDARY"
+  },
+  {
+    "S.NO.": 16.0,
+    "PARTNO": "F 002 H21 298",
+    "ITEMS": "D.FILTER",
+    "DESCRIPTION": "LEYLAND HINO"
+  },
+  {
+    "S.NO.": 17.0,
+    "PARTNO": "F 002 H21 299",
+    "ITEMS": "D.FILTER                                               ",
+    "DESCRIPTION": "CAV SINGLE"
+  },
+  {
+    "S.NO.": 18.0,
+    "PARTNO": "F 002 H22 095",
+    "ITEMS": "D.FILTER",
+    "DESCRIPTION": "ASHOK LEYLAND, TATA, SWARAJ MAZDA"
+  },
+  {
+    "S.NO.": 19.0,
+    "PARTNO": "F 002 H24 725",
+    "ITEMS": "D.FILTER ",
+    "DESCRIPTION": "EICHER 725 OR 718 YE DONO SATHME LAGTE HE "
+  },
+  {
+    "S.NO.": 20.0,
+    "PARTNO": "F 002 H22 283",
+    "ITEMS": "D.FILTER                              ",
+    "DESCRIPTION": "MAXIMO"
+  },
+  {
+    "S.NO.": 22.0,
+    "PARTNO": "9 451 037 420",
+    "ITEMS": "D.FILTER",
+    "DESCRIPTION": "0.2 LTR KIRLOSKER"
+  },
+  {
+    "S.NO.": 25.0,
+    "PARTNO": "F 002 H20 740",
+    "ITEMS": "D.FILTER",
+    "DESCRIPTION": "T.C KIT"
+  },
+  {
+    "S.NO.": 26.0,
+    "PARTNO": "F 002 H25 949",
+    "ITEMS": "DIESEL FILTER  ",
+    "DESCRIPTION": "h24 851 eicher"
+  },
+  {
+    "S.NO.": 27.0,
+    "PARTNO": "F 002 H24 928",
+    "ITEMS": "DIESEL FILTER  ",
+    "DESCRIPTION": "kit MASSEY"
+  },
+  {
+    "S.NO.": 28.0,
+    "PARTNO": "F 002 H24 930",
+    "ITEMS": "DIESEL FILTER  ",
+    "DESCRIPTION": "kit M.DI."
+  },
+  {
+    "S.NO.": 29.0,
+    "PARTNO": "F 002 H24 931",
+    "ITEMS": "DIESEL FILTER  ",
+    "DESCRIPTION": "kit swaraj"
+  },
+  {
+    "S.NO.": 30.0,
+    "PARTNO": "F 002 H24 932",
+    "ITEMS": "DIESEL FILTER  ",
+    "DESCRIPTION": "kit FORD"
+  },
+  {
+    "S.NO.": 31.0,
+    "PARTNO": "F 002 H24 718",
+    "ITEMS": "D.FILTER -",
+    "DESCRIPTION": "EICHER PRO"
+  },
+  {
+    "S.NO.": 32.0,
+    "PARTNO": "F 002 H20 364",
+    "ITEMS": "LINE FILTER",
+    "DESCRIPTION": "FARMTRAC DEISEL FILTER SINGLE"
+  },
+  {
+    "S.NO.": 33.0,
+    "PARTNO": "F 002 H25 993",
+    "ITEMS": "DIESEL FILTER",
+    "DESCRIPTION": "-H25 940     y"
+  },
+  {
+    "S.NO.": 34.0,
+    "PARTNO": "F 002 H24 500",
+    "ITEMS": "DIESEL FILTER ",
+    "DESCRIPTION": "T.C SMALL SAME AS H20239"
+  },
+  {
+    "S.NO.": 35.0,
+    "PARTNO": "F 002 H24 501",
+    "ITEMS": " DIESEL FILTER ",
+    "DESCRIPTION": "Tata cummins BS3  252"
+  },
+  {
+    "S.NO.": 36.0,
+    "PARTNO": "F 002 H24 504",
+    "ITEMS": " FILTER KIT",
+    "DESCRIPTION": "Tata cummins BS3 "
+  },
+  {
+    "S.NO.": 37.0,
+    "PARTNO": "F 002 H26 311",
+    "ITEMS": "DIESEL FILTER",
+    "DESCRIPTION": "ASHOK LEYLAND BS4"
+  },
+  {
+    "S.NO.": 38.0,
+    "PARTNO": "F 002 H26 310",
+    "ITEMS": "DIESEL FILTER",
+    "DESCRIPTION": "ASHOK LEYLAND BOSS"
+  },
+  {
+    "S.NO.": 39.0,
+    "PARTNO": "F 002 H26 309",
+    "ITEMS": "DIESEL FILTER",
+    "DESCRIPTION": "ASHOK LEYLAND BOSS"
+  },
+  {
+    "S.NO.": 41.0,
+    "PARTNO": "F 002 H26 359",
+    "ITEMS": "DIESEL FILTER",
+    "DESCRIPTION": "ARJUN TRACTOR"
+  },
+  {
+    "S.NO.": 42.0,
+    "PARTNO": "F 002 H26 360",
+    "ITEMS": "DIESEL FILTER",
+    "DESCRIPTION": ""
+  },
+  {
+    "S.NO.": 43.0,
+    "PARTNO": "F 002 H27 515",
+    "ITEMS": "DIESEL FILTER",
+    "DESCRIPTION": "TATA 1612 TO 3118 WITH 697 ENGINE BS3"
+  },
+  {
+    "S.NO.": 44.0,
+    "PARTNO": "F 002 H24 365",
+    "ITEMS": "DIESEL FILTER",
+    "DESCRIPTION": "TATA CUMMINS 2515 TO 4018"
+  },
+  {
+    "S.NO.": 45.0,
+    "PARTNO": "F 002 H25 859",
+    "ITEMS": "DIESEL FILTER ",
+    "DESCRIPTION": "H25 868"
+  },
+  {
+    "S.NO.": 46.0,
+    "PARTNO": "F 002 H25 960",
+    "ITEMS": "",
+    "DESCRIPTION": "H24 858 TATA ULTRA BS6"
+  },
+  {
+    "S.NO.": 47.0,
+    "PARTNO": "F 002 H25 965",
+    "ITEMS": "",
+    "DESCRIPTION": "H24 860"
+  },
+  {
+    "S.NO.": 48.0,
+    "PARTNO": "F 002 H25 964",
+    "ITEMS": "",
+    "DESCRIPTION": "TATA ULTRA BS6"
+  },
+  {
+    "S.NO.": 50.0,
+    "PARTNO": "OIL  FILTER",
+    "ITEMS": "",
+    "DESCRIPTION": ""
+  },
+  {
+    "S.NO.": 53.0,
+    "PARTNO": "9 451 037 422",
+    "ITEMS": "OIL FILTER",
+    "DESCRIPTION": "INTER O/M PAPER"
+  },
+  {
+    "S.NO.": 54.0,
+    "PARTNO": "9 451 037 423",
+    "ITEMS": "OIL FILTER",
+    "DESCRIPTION": "MASSEY O/M PAPER"
+  },
+  {
+    "S.NO.": 55.0,
+    "PARTNO": "9 451 037 424",
+    "ITEMS": "OIL FILTER",
+    "DESCRIPTION": " LEYLAND"
+  },
+  {
+    "S.NO.": 56.0,
+    "PARTNO": "9 451 037 432",
+    "ITEMS": "OIL FILTER",
+    "DESCRIPTION": "ESCORT TRACTOR"
+  },
+  {
+    "S.NO.": 57.0,
+    "PARTNO": "9 451 037 433",
+    "ITEMS": "OIL FILTER",
+    "DESCRIPTION": "HTM"
+  },
+  {
+    "S.NO.": 58.0,
+    "PARTNO": "9 451 037 434",
+    "ITEMS": "OIL FILTER",
+    "DESCRIPTION": "FORD"
+  },
+  {
+    "S.NO.": 59.0,
+    "PARTNO": "9 451 037 438",
+    "ITEMS": "OIL FILTER ",
+    "DESCRIPTION": "TATA S H-20 254--585 O/M 1210"
+  },
+  {
+    "S.NO.": 60.0,
+    "PARTNO": "9 451 037 441",
+    "ITEMS": "OIL FILTER",
+    "DESCRIPTION": "EICHER TRACTOR PAPER"
+  },
+  {
+    "S.NO.": 61.0,
+    "PARTNO": "9 451 037 445",
+    "ITEMS": "OIL FILTER",
+    "DESCRIPTION": "TEMPO TRAX"
+  },
+  {
+    "S.NO.": 63.0,
+    "PARTNO": "9 451 037 447",
+    "ITEMS": "HYD FILTER ",
+    "DESCRIPTION": "FORD HYD FILTER"
+  },
+  {
+    "S.NO.": 64.0,
+    "PARTNO": "9 451 037 456",
+    "ITEMS": "OIL FILTER",
+    "DESCRIPTION": "407 PAPER "
+  },
+  {
+    "S.NO.": 69.0,
+    "PARTNO": "9 951 030 141",
+    "ITEMS": "OIL FILTER",
+    "DESCRIPTION": "EICHER CANTER"
+  },
+  {
+    "S.NO.": 73.0,
+    "PARTNO": "F 002 H20 230",
+    "ITEMS": "OIL FILTER",
+    "DESCRIPTION": "SIMSON"
+  },
+  {
+    "S.NO.": 74.0,
+    "PARTNO": "F 002 H20 236",
+    "ITEMS": "OIL FILTER",
+    "DESCRIPTION": "BALWAN TRAX"
+  },
+  {
+    "S.NO.": 75.0,
+    "PARTNO": "F 002 H20 240",
+    "ITEMS": "OIL FILTER ",
+    "DESCRIPTION": "T.C."
+  },
+  {
+    "S.NO.": 76.0,
+    "PARTNO": "F 002 H20 241",
+    "ITEMS": "OIL FILTER",
+    "DESCRIPTION": " L/L HINO"
+  },
+  {
+    "S.NO.": 77.0,
+    "PARTNO": "F 002 H20 244",
+    "ITEMS": "OIL FILTER",
+    "DESCRIPTION": "MAHINDRA"
+  },
+  {
+    "S.NO.": 78.0,
+    "PARTNO": "F 002 H20 246",
+    "ITEMS": "OIL FILTER",
+    "DESCRIPTION": "SWARAJ"
+  },
+  {
+    "S.NO.": 79.0,
+    "PARTNO": "F 002 H20 247",
+    "ITEMS": "OIL FILTER",
+    "DESCRIPTION": "MASSEY DI"
+  },
+  {
+    "S.NO.": 82.0,
+    "PARTNO": "F 002 H20 353",
+    "ITEMS": "HYD FILTER ",
+    "DESCRIPTION": "N/HOLLAND HYD."
+  },
+  {
+    "S.NO.": 85.0,
+    "PARTNO": "F 002 H20 359",
+    "ITEMS": "HYD FILTER ",
+    "DESCRIPTION": "M&M ARJUN"
+  },
+  {
+    "S.NO.": 86.0,
+    "PARTNO": "F 002 H20 360",
+    "ITEMS": "HYD FILTER ",
+    "DESCRIPTION": "M&M HYD."
+  },
+  {
+    "S.NO.": 87.0,
+    "PARTNO": "F 002 H26 565",
+    "ITEMS": "H/FILTER ",
+    "DESCRIPTION": "MDI 575,605"
+  },
+  {
+    "S.NO.": 88.0,
+    "PARTNO": "F 002 H20 361",
+    "ITEMS": "OIL FILTER   ",
+    "DESCRIPTION": "EICHER D.I."
+  },
+  {
+    "S.NO.": 91.0,
+    "PARTNO": "F 002 H23 566",
+    "ITEMS": "OIL FILTER",
+    "DESCRIPTION": "TATA"
+  },
+  {
+    "S.NO.": 92.0,
+    "PARTNO": "F 002 H23 570",
+    "ITEMS": "OIL FILTER",
+    "DESCRIPTION": ""
+  },
+  {
+    "S.NO.": 93.0,
+    "PARTNO": "F 002 H23 571",
+    "ITEMS": "OIL FILTER",
+    "DESCRIPTION": "TATA CUMMINS 6BT BS3 TML 497 BS4"
+  },
+  {
+    "S.NO.": 94.0,
+    "PARTNO": "F 002 H23 572",
+    "ITEMS": "OIL FILTER",
+    "DESCRIPTION": "LEYLAND HARVESTER"
+  },
+  {
+    "S.NO.": 95.0,
+    "PARTNO": "F 002 H23 582",
+    "ITEMS": "DIESEL FILTER",
+    "DESCRIPTION": "19644 TATA BS3 1612"
+  },
+  {
+    "S.NO.": 96.0,
+    "PARTNO": "F 002 H23 590",
+    "ITEMS": "OIL FILTER",
+    "DESCRIPTION": "ID320451 EICHER&LEYLAND"
+  },
+  {
+    "S.NO.": 97.0,
+    "PARTNO": "F002 H24 312",
+    "ITEMS": "OIL FILTER",
+    "DESCRIPTION": "MAHINDRA ARJUN"
+  },
+  {
+    "S.NO.": 98.0,
+    "PARTNO": "F 002 H24 313",
+    "ITEMS": "OIL FILTER",
+    "DESCRIPTION": ""
+  },
+  {
+    "S.NO.": 99.0,
+    "PARTNO": "F 002 H26 576",
+    "ITEMS": "OIL FILTER",
+    "DESCRIPTION": "FARMTRAC CLASSIC WHITE"
+  },
+  {
+    "S.NO.": 100.0,
+    "PARTNO": "F 002 H24 342",
+    "ITEMS": "OIL FILTER",
+    "DESCRIPTION": "MAHINDRA YUVRAJ 215"
+  },
+  {
+    "S.NO.": 101.0,
+    "PARTNO": "F 002 H24 384",
+    "ITEMS": "OIL FILTER",
+    "DESCRIPTION": "M&M SARPANCH, TURBO YELLOW"
+  },
+  {
+    "S.NO.": 102.0,
+    "PARTNO": "F 002 H24 412",
+    "ITEMS": "OIL FILTER",
+    "DESCRIPTION": "johndeer"
+  },
+  {
+    "S.NO.": 103.0,
+    "PARTNO": "F 002 H24 502",
+    "ITEMS": "OIL FILTER ",
+    "DESCRIPTION": "SAMSE AS 240"
+  },
+  {
+    "S.NO.": 104.0,
+    "PARTNO": "F 002 H24 520",
+    "ITEMS": "BYPASS FILTER",
+    "DESCRIPTION": "EICHER CANTER"
+  },
+  {
+    "S.NO.": 105.0,
+    "PARTNO": "F 002 H24 991",
+    "ITEMS": "H/FILTER ",
+    "DESCRIPTION": "3130 nholland"
+  },
+  {
+    "S.NO.": 106.0,
+    "PARTNO": "F 002 H24 992",
+    "ITEMS": "HYD FILTER ",
+    "DESCRIPTION": "NEW HOLLAND"
+  },
+  {
+    "S.NO.": 107.0,
+    "PARTNO": "F 002 H24 993",
+    "ITEMS": "H/FILTER ",
+    "DESCRIPTION": "Swaraj"
+  },
+  {
+    "S.NO.": 108.0,
+    "PARTNO": "F 002 H24 994",
+    "ITEMS": "H/FILTER ",
+    "DESCRIPTION": "SONALIKA"
+  },
+  {
+    "S.NO.": 109.0,
+    "PARTNO": "F 002 H24 995",
+    "ITEMS": "H/FILTER",
+    "DESCRIPTION": "ESCORT TRACTOR"
+  },
+  {
+    "S.NO.": 110.0,
+    "PARTNO": "F 002 H24 996",
+    "ITEMS": "H/FILTER",
+    "DESCRIPTION": " ESCORT/FARMTRAC"
+  },
+  {
+    "S.NO.": 111.0,
+    "PARTNO": "F 002 H26 317",
+    "ITEMS": "O/FILTER ",
+    "DESCRIPTION": "JCB"
+  },
+  {
+    "S.NO.": 114.0,
+    "PARTNO": "F 002 H26 313",
+    "ITEMS": "O/FILTER ",
+    "DESCRIPTION": "LEYLAND"
+  },
+  {
+    "S.NO.": 115.0,
+    "PARTNO": "F 002 H60 015",
+    "ITEMS": "O/FILTER ",
+    "DESCRIPTION": "LF16082"
+  },
+  {
+    "S.NO.": 116.0,
+    "PARTNO": "F 002 H60 022",
+    "ITEMS": "O/FILTER ",
+    "DESCRIPTION": "L/L HINO LF9028, LF16079"
+  },
+  {
+    "S.NO.": 117.0,
+    "PARTNO": "F 002 H20 031",
+    "ITEMS": "O/FILTER ",
+    "DESCRIPTION": ""
+  },
+  {
+    "S.NO.": 118.0,
+    "PARTNO": "F 002 H20 032",
+    "ITEMS": "O/FILTER ",
+    "DESCRIPTION": ""
+  },
+  {
+    "S.NO.": 120.0,
+    "PARTNO": "F 002 H24 420",
+    "ITEMS": "O/FILTER ",
+    "DESCRIPTION": "LEYLAND DOST"
+  },
+  {
+    "S.NO.": 121.0,
+    "PARTNO": "F 002 H26 361",
+    "ITEMS": "O/FILTER ",
+    "DESCRIPTION": ""
+  },
+  {
+    "S.NO.": 122.0,
+    "PARTNO": "F002H26318",
+    "ITEMS": "H/FILTER ",
+    "DESCRIPTION": "JCB"
+  },
+  {
+    "S.NO.": 123.0,
+    "PARTNO": "F 002 H27 505",
+    "ITEMS": "OIL FILTER",
+    "DESCRIPTION": ""
+  },
+  {
+    "S.NO.": 126.0,
+    "PARTNO": "AIR FILTER",
+    "ITEMS": "",
+    "DESCRIPTION": ""
+  },
+  {
+    "S.NO.": 128.0,
+    "PARTNO": "F 002 H20 245",
+    "ITEMS": "AIR FILTER",
+    "DESCRIPTION": "MAHINDRA"
+  },
+  {
+    "S.NO.": 129.0,
+    "PARTNO": "F 002 H24 923",
+    "ITEMS": "AIR FILTER",
+    "DESCRIPTION": "EICHER"
+  },
+  {
+    "S.NO.": 130.0,
+    "PARTNO": "F 002 H21 218",
+    "ITEMS": "AIR FILTER",
+    "DESCRIPTION": "AF947, AF25939, AF26004 16121510"
+  },
+  {
+    "S.NO.": 131.0,
+    "PARTNO": "F 002 H21 219",
+    "ITEMS": "AIR FILTER",
+    "DESCRIPTION": "AF963, AF25948, AF26008"
+  },
+  {
+    "S.NO.": 132.0,
+    "PARTNO": "F 002 H21 295",
+    "ITEMS": "AIR FILTER ",
+    "DESCRIPTION": "AF25884 1613"
+  },
+  {
+    "S.NO.": 133.0,
+    "PARTNO": "F 002 H21 296",
+    "ITEMS": "AIR FILTER",
+    "DESCRIPTION": "AF25885"
+  },
+  {
+    "S.NO.": "",
+    "PARTNO": "F 002 H23 561",
+    "ITEMS": "AIR FILTER",
+    "DESCRIPTION": "DOUBLE FILTER H60011 + H60010"
+  },
+  {
+    "S.NO.": 134.0,
+    "PARTNO": "F 002 H23 587",
+    "ITEMS": "AIR FILTER",
+    "DESCRIPTION": "OUTSIDE OF H23589"
+  },
+  {
+    "S.NO.": 135.0,
+    "PARTNO": "F 002 H23 589 ",
+    "ITEMS": "AIR FILTER",
+    "DESCRIPTION": "CONE A/F"
+  },
+  {
+    "S.NO.": 136.0,
+    "PARTNO": "F 002 H23 594",
+    "ITEMS": "",
+    "DESCRIPTION": ""
+  },
+  {
+    "S.NO.": 137.0,
+    "PARTNO": "F 002 H24 418",
+    "ITEMS": "AIR FILTER  ",
+    "DESCRIPTION": "407 TURBO"
+  },
+  {
+    "S.NO.": 139.0,
+    "PARTNO": "F 002 H23 498",
+    "ITEMS": "AIR FILTER",
+    "DESCRIPTION": ""
+  },
+  {
+    "S.NO.": 140.0,
+    "PARTNO": "F 002 H23 564",
+    "ITEMS": "AIR FILTERL/P ",
+    "DESCRIPTION": "TATA 709/712 LEYLAND 2214 HINO 1613 STAR BUS 1109"
+  },
+  {
+    "S.NO.": 141.0,
+    "PARTNO": "F 002 H23 575",
+    "ITEMS": "AIR FILTER",
+    "DESCRIPTION": "PREET, SONALIKA BIG"
+  },
+  {
+    "S.NO.": 142.0,
+    "PARTNO": "F 002 H23 578",
+    "ITEMS": "AIR FILTER KIT",
+    "DESCRIPTION": "johndeer"
+  },
+  {
+    "S.NO.": 143.0,
+    "PARTNO": "F 002 H23 591",
+    "ITEMS": "AIR FILTER KIT",
+    "DESCRIPTION": "SWARAJ"
+  },
+  {
+    "S.NO.": 144.0,
+    "PARTNO": "F 002 H24 922",
+    "ITEMS": "AIR FILTER  ",
+    "DESCRIPTION": "MASSEY"
+  },
+  {
+    "S.NO.": 145.0,
+    "PARTNO": "F 002 H60 006",
+    "ITEMS": "AIR FILTER",
+    "DESCRIPTION": "TATA 407"
+  },
+  {
+    "S.NO.": 146.0,
+    "PARTNO": "F 002 H60 007",
+    "ITEMS": "AIR FILTER",
+    "DESCRIPTION": "AF1842 INSIDE OF H60007"
+  },
+  {
+    "S.NO.": 147.0,
+    "PARTNO": "F 002 H60 010",
+    "ITEMS": "AIR FILTER",
+    "DESCRIPTION": "AF4670, AF25930, AF25931"
+  },
+  {
+    "S.NO.": 148.0,
+    "PARTNO": "F 002 H60 011",
+    "ITEMS": "AIR FILTER",
+    "DESCRIPTION": " L/L 2214  25939 AF4669, AF25921, AF25922"
+  },
+  {
+    "S.NO.": 149.0,
+    "PARTNO": "F 002 H60 012",
+    "ITEMS": "AIR FILTER",
+    "DESCRIPTION": "BOLERO"
+  },
+  {
+    "S.NO.": 150.0,
+    "PARTNO": "F 002 H60 025",
+    "ITEMS": "AIR FILTER",
+    "DESCRIPTION": "LEYLAND"
+  },
+  {
+    "S.NO.": 151.0,
+    "PARTNO": "F 002 H60 028",
+    "ITEMS": "AIR FILTER",
+    "DESCRIPTION": ""
+  },
+  {
+    "S.NO.": 152.0,
+    "PARTNO": "F 002 H60 ",
+    "ITEMS": "AIR FILTER",
+    "DESCRIPTION": "MAXIMO"
+  },
+  {
+    "S.NO.": 153.0,
+    "PARTNO": "F 002 H60 ",
+    "ITEMS": "AIR FILTER",
+    "DESCRIPTION": "INDICA L-5001"
+  },
+  {
+    "S.NO.": 154.0,
+    "PARTNO": "F 002 H60 ",
+    "ITEMS": "AIR FILTER",
+    "DESCRIPTION": ""
+  },
+  {
+    "S.NO.": 155.0,
+    "PARTNO": "F 002 H24 415",
+    "ITEMS": "AIR FILTER KIT",
+    "DESCRIPTION": ""
+  },
+  {
+    "S.NO.": 156.0,
+    "PARTNO": "F 002 H26559",
+    "ITEMS": "A/F ",
+    "DESCRIPTION": "TATA SIGMA"
+  },
+  {
+    "S.NO.": 157.0,
+    "PARTNO": "F 002 H26 556",
+    "ITEMS": "A/F ",
+    "DESCRIPTION": "LEYLAND BS6"
+  },
+  {
+    "S.NO.": 165.0,
+    "PARTNO": "PETROL FILTER",
+    "ITEMS": "",
+    "DESCRIPTION": ""
+  },
+  {
+    "S.NO.": 166.0,
+    "PARTNO": "F 002 R20 000",
+    "ITEMS": "PETROL FILTER",
+    "DESCRIPTION": ""
+  },
+  {
+    "S.NO.": 167.0,
+    "PARTNO": "F 002 R20 002",
+    "ITEMS": "PETROL FILTER",
+    "DESCRIPTION": ""
+  },
+  {
+    "S.NO.": 168.0,
+    "PARTNO": "F 002 H20 387",
+    "ITEMS": "W/SEPARATOR",
+    "DESCRIPTION": ""
+  },
+  {
+    "S.NO.": 169.0,
+    "PARTNO": "F 002 H23-535",
+    "ITEMS": "FUEL STAINER",
+    "DESCRIPTION": ""
+  },
+  {
+    "S.NO.": 170.0,
+    "PARTNO": "F 002 H23-536",
+    "ITEMS": "FUEL STAINER",
+    "DESCRIPTION": ""
+  }
+]

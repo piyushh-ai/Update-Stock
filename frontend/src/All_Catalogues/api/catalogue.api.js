@@ -7,6 +7,7 @@ export const fetchAllCatalogues = async ({ page, limit, search, company }) => {
     Bosch_PC_Starter: "/bosch-electric-cat/starter",
     Bosch_PC_Alternator: "/bosch-electric-cat/alternator",
     RMP_Bearings_Catalogues: "/rmpCat",
+    Bosch_CV_Filter: "/bosch-filters/cv",
   };
 
   const endpoint = apiMap[company];

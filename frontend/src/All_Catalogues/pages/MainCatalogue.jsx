@@ -17,6 +17,11 @@ const MainCatalogue = () => {
       type: "Bosch_PC_Filter",
     },
     {
+      label: "Bosch PC Filter",
+      image: "/catalogue_images/bosch_filter.png",
+      type: "Bosch_CV_Filter",
+    },
+    {
       label: "Autolek Filters",
       image: "/catalogue_images/autolek_filter.png",
       type: "Autolek_FIlter",
@@ -33,7 +38,7 @@ const MainCatalogue = () => {
     },
     {
       label: "RMP Bearings Catalogues",
-      image: "/catalogue_images/bosch_filter.png",
+      image: "/catalogue_images/rmp_bearing.png",
       type: "RMP_Bearings_Catalogues",
     },
   ];

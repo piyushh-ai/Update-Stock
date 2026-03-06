@@ -46,6 +46,13 @@ const MobileMenu = ({ open, setOpen }) => {
   const drawerRef = useRef(null);
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "instant",
+    });
+  }, [location.pathname]);
+
+  useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
       window.history.pushState({ menu: true }, "");
@@ -113,7 +120,9 @@ const MobileMenu = ({ open, setOpen }) => {
         <header className="mobile-menu-header">
           <p className="mobile-menu-header__eyebrow">Inventory System</p>
           <h1 className="mobile-menu-header__brand">B.K Engineering</h1>
-          <p className="mobile-menu-header__sub">Parts &amp; Stock Management</p>
+          <p className="mobile-menu-header__sub">
+            Parts &amp; Stock Management
+          </p>
           <span className="mobile-menu-header__accent-line" />
         </header>
 
@@ -140,7 +149,9 @@ const MobileMenu = ({ open, setOpen }) => {
 
         {/* Footer */}
         <footer className="mobile-menu-footer">
-          <p className="mobile-menu-footer__tagline">Discipline · Precision · Control</p>
+          <p className="mobile-menu-footer__tagline">
+            Discipline · Precision · Control
+          </p>
           <p className="mobile-menu-footer__version">v2.1.0</p>
         </footer>
       </div>

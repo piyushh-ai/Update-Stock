@@ -5,6 +5,7 @@ import AutolekFilter from "./Autolek_filter/pages/AutolekFilter.jsx";
 import BoschStarter from "./Bosch_AutoElectric/pages/BoschStarter.jsx";
 import BoschAlternator from "./Bosch_AutoElectric/pages/BoschAlternator.jsx";
 import Rmp from "./RMP/pages/rmp.jsx";
+import BoschCV from "./bosch_cv/pages/BoschCV.jsx";
 
 const CatalogueDataPage = () => {
   const { company } = useParams();
@@ -14,6 +15,7 @@ const CatalogueDataPage = () => {
   if (company === "Bosch_PC_Starter") return <BoschStarter />;
   if (company === "Bosch_PC_Alternator") return <BoschAlternator />;
   if (company === "RMP_Bearings_Catalogues") return <Rmp />;
+  if (company === "Bosch_CV_Filter") return <BoschCV />;
 
   return <h2>Company not found</h2>;
 };

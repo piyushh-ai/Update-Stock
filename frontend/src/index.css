@@ -15,6 +15,7 @@ body,
   height: 100%;
   width: 100%;
   font-family: hannah, Arial, sans-serif;
+  scroll-behavior: smooth;
 
   /* ── Page background: cool blue-grey, easy on the eyes all day ── */
   background-color: #eef1f6;
