@@ -19,7 +19,7 @@ connectToDb();
  */
 boschImportExcel()
 companyImportExcel()
-boschPriceImportExcel()
+// boschPriceImportExcel()
 
 
 app.listen(port, () => {
