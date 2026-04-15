@@ -7,7 +7,7 @@ const boschStockSchema = new mongoose.Schema(
     },
     partno: {
       type: String,
-      unique: [true, "Part number must be unique"],
+      // unique: [true, "Part number must be unique"],
     },
     itemName: {
       type: String,

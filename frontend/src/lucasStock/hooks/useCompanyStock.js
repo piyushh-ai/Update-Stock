@@ -48,7 +48,7 @@ export const useStockBySheet = (params = {}) => {
     }
 
     loadStock();
-  }, [sheetName, search]);
+  }, [sheetName, search, page, limit]);
 
   return { stock, total, loading, error };
 };
