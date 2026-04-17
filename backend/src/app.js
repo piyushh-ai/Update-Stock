@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
+const compression = require("compression")
 
 /**
  * all routes are imported here
@@ -13,6 +14,7 @@ const companyStockRouter = require("./routes/companyStock.routes.js");
 const boschFilterRoute = require("./routes/boschFilter.route.js");
 const autolekFilterRoute = require("./routes/autolekFilter.route.js");
 const boschPriceListRoute = require("./routes/boschPriceList.route.js");
+const router = require("./routes/upload.route.js");
 // const dist = require("../dist");
 // const distHtml = require("../dist/index.html");
 
@@ -24,6 +26,7 @@ app.use(
     credentials: true,
   }),
 );
+app.use(compression())
 
 /**
  * all catalog routes are defined here
@@ -43,6 +46,7 @@ app.use("/api/boschPriceList", boschPriceListRoute);
  */
 app.use("/api/boschStock", boschStockRouter);
 app.use("/api/companyStock", companyStockRouter);
+app.use("/api/excel", router)
 
 app.get("/version", (req, res) => {
   res.json({ version: "2.0.2", updateUrl:"https://drive.google.com/file/d/1m2dMiizWBYThp9ku1k_ybMQLO3yKf5V1/view?usp=sharing", forceUpdate:true });
