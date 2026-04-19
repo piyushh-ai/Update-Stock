@@ -49,7 +49,7 @@ app.use("/api/companyStock", companyStockRouter);
 app.use("/api/excel", router)
 
 app.get("/version", (req, res) => {
-  res.json({ version: "2.0.2", updateUrl:"https://drive.google.com/file/d/1m2dMiizWBYThp9ku1k_ybMQLO3yKf5V1/view?usp=sharing", forceUpdate:true });
+  res.json({ version: "2.0.3", updateUrl:"https://drive.google.com/file/d/1aaOhI0ATH80_R8V8nfJLhCbyxVSFMBlZ/view?usp=drive_link", forceUpdate:true });
 });
 
 const distPath = path.join(__dirname, "../dist");
